@@ -1,0 +1,41 @@
+# These are the default portuguese translations
+# Brazil specific translations must be done in pt-BR locale
+# Portugal/Iberia specific translations must be done in pt-PT locale
+# And so on...
+pt:
+  empty: 'Nenhum %{model} encontrado.'
+  destroy: 'Excluir'
+  add: 'Adicionar'
+  confirm: 'Você está certo disso?'
+  logout: 'Sair'
+  profile: 'Perfil'
+  languages:
+    pt: 'Português'
+    es: 'Español'
+    en: 'English'
+    en-GB: 'Great Britain English'
+    en-US: 'United States English'
+    es-MX: 'Español Mexicano'
+    es-CO: 'Español Colombiano'
+    pt-BR: 'Português Brasileiro'
+    pt-PT: 'Português de Portugal'
+  activerecord:
+    models:
+      transaction: Transação
+      user: Usuário
+    attributes:
+  flash:
+    actions:
+      create:
+        notice: '%{resource_name} criado com sucesso.'
+        alert: '%{resource_name} não pôde ser criado.'
+      update:
+        notice: '%{resource_name} atualizado com sucesso.'
+      destroy:
+        notice: '%{resource_name} excluído com sucesso.'
+        alert: '%{resource_name} não pôde ser excluído.'
+    not_authorized: 'Você não possui as permissões necessárias para realizar esta ação.'
+  layouts:
+    application:
+      love: 'Feito com amor e <a href="https://github.com/danielweinmann/unlock" target="_blank">Open Source</a> em 2014 ♥'
+      by: 'Por <a href="http://fb.com/danielweinmann" target="_blank">Daniel Weinmann</a>, co-criador do <a href="http://catarse.me" target="_blank">Catarse</a> e da <a href="http://engage.is" target="_blank">Engage</a>, e <a href="http://larusso.com.br" target="_blank">Daniel Larusso</a>, co-criador do <a href="http://nos.vc" target="_blank">Nós.vc</a> e do <a href="http://estaleiroliberdade.com.br" target="_blank">Estaleiro Liberdade</a>.'

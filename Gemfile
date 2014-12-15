@@ -8,6 +8,7 @@ gem 'pg'
 gem 'state_machine'
 gem 'paperclip', '~> 4.1.1'
 gem 'schema_plus'
+gem 'hstore_translate'
 
 # Controller related
 gem 'responders'
@@ -20,6 +21,8 @@ gem 'pundit'
 gem 'devise-i18n'
 gem 'devise-i18n-views', github: 'mcasimir/devise-i18n-views'
 gem 'rails-i18n', github: 'svenfuchs/rails-i18n', branch: 'master'
+gem 'routing-filter', '~> 0.4.0.pre'
+gem 'world-flags'
 
 # Views and assets
 gem 'neat'

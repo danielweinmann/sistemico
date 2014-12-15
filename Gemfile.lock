@@ -79,10 +79,13 @@ GEM
     execjs (2.2.2)
     fb-channel-file (0.0.2)
       rails (>= 3.0)
+    hashie (3.3.2)
     heroku-deflater (0.5.3)
       rack (>= 1.4.5)
     high_voltage (2.2.1)
     hike (1.2.3)
+    hstore_translate (1.0.0)
+      activerecord (>= 3.1.0)
     i18n (0.6.11)
     jbuilder (2.2.5)
       activesupport (>= 3.0.0, < 5)
@@ -146,6 +149,8 @@ GEM
     rake (10.4.2)
     responders (1.1.2)
       railties (>= 3.2, < 4.2)
+    routing-filter (0.4.0.pre)
+      actionpack
     rspec-core (3.1.7)
       rspec-support (~> 3.1.0)
     rspec-expectations (3.1.2)
@@ -209,6 +214,9 @@ GEM
     valuable (0.9.9)
     warden (1.2.3)
       rack (>= 1.0)
+    world-flags (0.6.5)
+      hashie (>= 1.2)
+      i18n (>= 0.6)
 
 PLATFORMS
   ruby
@@ -223,6 +231,7 @@ DEPENDENCIES
   fb-channel-file
   heroku-deflater (>= 0.4.1)
   high_voltage
+  hstore_translate
   jbuilder
   jquery-rails
   letter_opener
@@ -237,6 +246,7 @@ DEPENDENCIES
   rails-i18n!
   rails_12factor
   responders
+  routing-filter (~> 0.4.0.pre)
   rspec-rails
   sass-rails
   schema_plus
@@ -248,3 +258,4 @@ DEPENDENCIES
   uglifier
   underscore-rails
   unicorn
+  world-flags

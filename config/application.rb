@@ -26,5 +26,31 @@ module Sistemico
     # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     config.i18n.default_locale = 'pt-BR'
+
+    # Locales shown to the user will be only the ones with country. The others are just used for fallbacks
+    config.i18n.available_locales = [
+      # Default locales
+      'pt', 'es', 'en', 'es-419',
+      # Portuguese locales 
+      'pt-BR',
+      # Spanish locales
+      # 'es-MX', 'es-CO', 
+      # English locales
+      # 'en-US'
+    ]
+
+    config.i18n.fallbacks = {
+      #English fallbacks
+      'en-US' => 'en',
+      'en-GB' => 'en',
+      # Spanish fallbacks
+      'es-MX' => 'es-419',
+      'es-CO' => 'es-419',
+      'es-419' => 'es',
+      # Portuguese fallbacks (default_locale fallback must come last!)
+      'pt-PT' => 'pt',
+      'pt-BR' => 'pt'
+    }
+
   end
 end

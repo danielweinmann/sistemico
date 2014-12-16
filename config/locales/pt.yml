@@ -24,6 +24,13 @@ pt:
       transaction: Transação
       user: Usuário
     attributes:
+      user:
+        name: Nome
+        image: Foto
+      transaction:
+        from_user: De
+        to_user: Para
+        value: Valor
   flash:
     actions:
       create:

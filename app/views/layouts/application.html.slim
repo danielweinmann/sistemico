@@ -10,31 +10,34 @@ html
     - else
       / Meta tags for pages that don't have specific meta tags
       meta name="description" content=yield(:title)
-      meta name="keywords" content="#{yield :title} Unlock"
+      meta name="keywords" content="#{yield :title} Sistêmico"
       meta property="og:title" content=yield(:title)
       meta property="og:type" content="website"
       meta property="og:url" content=(content_for?(:url) ? yield(:url) : request.url)
+      / TODO logo_facebook.png
       meta property="og:image" content=="#{request.protocol}#{request.host_with_port}#{image_path("logo_facebook.png")}"
       meta property="og:description" content=yield(:title)
-      meta name="author" content="Larusso e Weinmann"
+      meta name="author" content="Oswaldo Oliveira"
     / Metatags for every page
-    meta property="og:site_name" content="Unlock"
+    meta property="og:site_name" content="Sistêmico"
     meta property="fb:app_id" content=ENV['FACEBOOK_APP_ID']
     meta property="fb:admins" content=ENV['FACEBOOK_ADMINS']
-    title= "#{"#{yield :title} · " if content_for?(:title)}Unlock"
+    title= "#{"#{yield :title} · " if content_for?(:title)}Sistêmico"
     - if content_for? :external_js
       = yield :external_js
     = stylesheet_link_tag "application"
+    / TODO favicon.png
     link rel="shortcut icon" href==image_path('favicon.png')
+    / TODO Google Analytics
     javascript:
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
       m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
       })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
       ga('create', 'UA-43352814-4', 'unlock.fund');
     = javascript_include_tag "application" 
     = csrf_meta_tags 
+  / TODO facebook app id
   body[data-namespace="#{namespace}" data-controller="#{controller_name}" data-action="#{action_name}" data-locale="#{I18n.locale}" data-facebook_app_id="#{ENV['FACEBOOK_APP_ID']}"]
     - if Rails.env.production?
       javascript:
@@ -48,15 +51,13 @@ html
       header
         - if add_logo?
           .logo= link_to :root do
-            h1= image_tag 'logo.png', alt: "Unlock", title: "Unlock"
+            h1 Sistêmico
         - if current_user
           .menu.user
             a.open href="#"
               = truncate current_user.name, length: 18
               span ▾
             nav
-              = link_to t('my_contributions'), my_contributions_path
-              = link_to t('my_initiatives'), my_initiatives_path
               = link_to t('profile'), edit_user_registration_path
               hr
               = link_to t('logout'), destroy_user_session_path, method: :delete
@@ -64,14 +65,6 @@ html
           nav.sign_in
             = link_to t('devise.shared.links.sign_up'), new_user_registration_path
             = link_to t('devise.shared.links.sign_in'), new_user_session_path
-          / .menu.locales
-          /   a.open href="#"
-          /     = I18n.locale
-          /     span ▾
-          /   nav
-          /     - I18n.available_locales.select{ |locale| locale != I18n.locale }.map(&:to_s).sort.each do |locale|
-          /       = link_to params.merge(locale: locale) do
-          /         = locale
       = yield :pre_header
     - if content_for?(:header)
       #header_wrapper
@@ -93,29 +86,27 @@ html
         section.user
           nav
             - if current_user
-              = link_to t('my_contributions'), my_contributions_path
-              = link_to t('my_initiatives'), my_initiatives_path
               = link_to t('profile'), edit_user_registration_path
               = link_to t('logout'), destroy_user_session_path, method: :delete
             - elsif namespace != "devise"
               = link_to t('devise.shared.links.sign_up'), new_user_registration_path
               = link_to t('devise.shared.links.sign_in'), new_user_session_path
-        section.links
-          h5
-            a href='https://unlock.fund/unlock' target='_blank'= t('about')
-          h5
-            a href='https://www.facebook.com/groups/unlock.fund/' target='_blank'= t('help')
-          h5
-            a href='https://unlock.fund/pages/terms' target='_blank'= t('terms')
+        / section.links
+        /   h5
+        /     a href='https://unlock.fund/unlock' target='_blank'= t('about')
+        /   h5
+        /     a href='https://www.facebook.com/groups/unlock.fund/' target='_blank'= t('help')
+        /   h5
+        /     a href='https://unlock.fund/pages/terms' target='_blank'= t('terms')
         section.credits
-          h4
-            = link_to :root do
-              = image_tag 'logo_footer.png', alt: "Unlock", title: "Unlock"
+          / h4
+          /   = link_to :root do
+          /     = image_tag 'logo_footer.png', alt: "Unlock", title: "Unlock"
           h5== t('.love')
           h5== t('.by')
-        - if request.method == "GET" && I18n.available_locales.size > 1
-          = flag_list 32 do
-            - I18n.available_locales.map(&:to_s).sort.each do |locale|
-              - if locale_country(locale)
-                = link_to params.merge(locale: locale) do
-                  = flag(locale_country(locale), :title => t("languages.#{locale}"))
+        / - if request.method == "GET" && I18n.available_locales.size > 1
+        /   = flag_list 32 do
+        /     - I18n.available_locales.map(&:to_s).sort.each do |locale|
+        /       - if locale_country(locale)
+        /         = link_to params.merge(locale: locale) do
+        /           = flag(locale_country(locale), :title => t("languages.#{locale}"))

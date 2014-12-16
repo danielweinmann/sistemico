@@ -58,7 +58,8 @@ html
               = truncate current_user.name, length: 18
               span ▾
             nav
-              = link_to t('profile'), edit_user_registration_path
+              = link_to t('profile'), user_by_permalink_path(current_user)
+              = link_to t('my_info'), edit_user_registration_path
               hr
               = link_to t('logout'), destroy_user_session_path, method: :delete
         - else
@@ -86,7 +87,8 @@ html
         section.user
           nav
             - if current_user
-              = link_to t('profile'), edit_user_registration_path
+              = link_to t('profile'), user_by_permalink_path(current_user)
+              = link_to t('my_info'), edit_user_registration_path
               = link_to t('logout'), destroy_user_session_path, method: :delete
             - elsif namespace != "devise"
               = link_to t('devise.shared.links.sign_up'), new_user_registration_path

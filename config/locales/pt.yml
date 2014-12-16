@@ -9,6 +9,7 @@ pt:
   confirm: 'Você está certo disso?'
   logout: 'Sair'
   profile: 'Perfil'
+  my_info: 'Meus dados'
   languages:
     pt: 'Português'
     es: 'Español'
@@ -27,6 +28,7 @@ pt:
       user:
         name: Nome
         image: Foto
+        permalink: Permalink
       transaction:
         from_user: De
         to_user: Para

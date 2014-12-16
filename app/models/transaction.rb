@@ -24,7 +24,7 @@ class Transaction < ActiveRecord::Base
   end
 
   def self.involving(user)
-    where("from_user_id = #{user.id} OR to_user_id = #{user.id}")
+    where("from_user_id = #{user.id} OR to_user_id = #{user.id}").order("updated_at DESC")
   end
 
 end

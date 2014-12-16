@@ -44,5 +44,5 @@ pt:
     not_authorized: 'Você não possui as permissões necessárias para realizar esta ação.'
   layouts:
     application:
-      love: 'Feito com amor e <a href="https://github.com/danielweinmann/unlock" target="_blank">Open Source</a> em 2014 ♥'
-      by: 'Por <a href="http://fb.com/danielweinmann" target="_blank">Daniel Weinmann</a>, co-criador do <a href="http://catarse.me" target="_blank">Catarse</a> e da <a href="http://engage.is" target="_blank">Engage</a>, e <a href="http://larusso.com.br" target="_blank">Daniel Larusso</a>, co-criador do <a href="http://nos.vc" target="_blank">Nós.vc</a> e do <a href="http://estaleiroliberdade.com.br" target="_blank">Estaleiro Liberdade</a>.'
+      love: 'Feito com amor e <a href="https://github.com/danielweinmann/sistemico" target="_blank">Open Source</a> em 2014 ♥'
+      by: 'Por <a href="http://fb.com/oswaldooliveirao2" target="_blank">Oswaldo Oliveira</a>, <a href="http://larusso.com.br" target="_blank">Daniel Larusso</a>, <a href="http://fb.com/danielweinmann" target="_blank">Daniel Weinmann</a>, <a href="https://github.com/cuducos" target="_blank">Eduardo Cuducos</a> e <a href="http://henriquebastos.net" target="_blank">Henrique Bastos</a>.'

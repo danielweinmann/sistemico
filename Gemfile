@@ -37,7 +37,9 @@ gem 'underscore-rails'
 gem 'fb-channel-file'
 gem 'active_decorator'
 gem 'jbuilder'
+gem 'icomoon-rails'
 gem 'high_voltage'
+gem 'maskmoney-rails'
 
 # Other
 gem 'aws-sdk'

@@ -1,0 +1,115 @@
+#flash
+  display: none
+  position: fixed
+  bottom: 0
+  width: 100%
+  z-index: 400
+  div
+    font-size: 1.2em
+    line-height: 1.2em
+    color: $flash_text_color
+    padding: 0.5em
+    margin: 0
+    text-align: center
+    +media($desktop)
+      font-size: 1.6em
+  .notice, .success
+    background-color: $flash_success_color
+  .failure, .error, .alert
+    background-color: $flash_failure_color
+#pre_header_wrapper
+  background-color: $container_color
+  header
+    +outer-container
+    .logo
+      float: left
+      a
+        text-decoration: none
+        h1
+          margin-top: 0.15em
+      img
+        width: 2.2em
+        vertical-align: middle
+    .sign_in, .user
+      padding: 1em 0
+      font-size: 0.8em
+      width: 20%
+      display: none
+      color: $text_color
+      float: right
+      text-align: right
+      a
+        width: 100%
+        color: $text_color
+        text-decoration: none
+        margin-left: 1.5em
+        &:hover
+          color: $link_color
+      +media($desktop)
+        display: block
+#header_wrapper
+  header
+    text-align: center
+    +outer-container
+#post_header_wrapper
+  background-color: $button_color
+  padding: 1em 0
+  header
+    +outer-container
+#content
+  padding: 4em 0
+  +outer-container
+  >section
+    +span-columns(6)
+#footer_wrapper
+  padding: 2.5em 0 2em 0
+  background: $footer_color
+  footer
+    +outer-container
+    text-align: center
+    a
+      text-decoration: none
+    h4
+      +span-columns(6)
+      margin-bottom: 2em
+      a
+        color: $footer_text_color
+        text-decoration: none
+        font-size: 2em
+        line-height: 1.2em
+        &:hover
+          opacity: 0.8
+    h5
+      color: $footer_text_color
+    .user
+      +span-columns(6)
+      margin-bottom: 4em
+      +media($desktop)
+        display: none
+      a
+        +sistemico_button
+        font-size: 1em
+        line-height: 1.5em
+        margin-left: 0em
+        display: block
+        margin-bottom: 1em
+    .credits
+      +span-columns(6)
+    .links
+      +span-columns(6)
+      +media($desktop)
+        +span-columns(6)
+        +shift(3)
+      margin-bottom: 2em
+      h5
+        +span-columns(2)
+        +omega(3n)
+    .flags
+      +span-columns(6) 
+      margin-top: 2em
+      text-align: center
+      a
+        display: inline-block
+        margin-right: 0.5em
+        &:last-child
+          margin: 0

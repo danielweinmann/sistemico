@@ -1,0 +1,64 @@
+@mixin sistemico_button
+  background: $button_color
+  padding: 0.2em 1.2em
+  border-radius: 0.4em
+  border: none
+  text-align: center
+  color: $button_text_color
+  font-weight: $bold_weight
+  font-size: 2.2em
+  line-height: 100%
+  text-decoration: none
+  width: auto
+  cursor: pointer
+  &:hover
+    background: $button_hover_color
+    color: $button_text_color
+@mixin sistemico_warning
+  background-color: tint($flash_failure_color, 80%)
+  padding: 2em
+  h2, h3
+    font-size: 1.17em
+    color: $flash_failure_color
+  h3
+    margin-bottom: 1em
+  margin-bottom: 2em
+.button
+  +sistemico_button
+.reject
+  background: $careful_color
+  &:hover
+    background: $careful_hover_color
+.links
+  +span-columns(6)
+  text-align: center
+.field
+  margin-bottom: 2em
+.warning
+  +sistemico_warning
+.menu
+  position: relative
+  .open
+    text-decoration: none
+    color: $subheadline_color
+    &:hover
+      color: $hover_color
+  nav
+    z-index: 500
+    position: absolute
+    top: 3em
+    left: 0
+    min-width: 100%
+    display: none
+    background-color: $container_color
+    border: 1px solid $border_color
+    a
+      text-decoration: none
+      display: block
+      padding: 0.5em
+      color: $subheadline_color
+      margin: 0 !important
+      color: $text_color !important
+      &:hover
+        background-color: $highlight_color
+        text-decoration: none !important

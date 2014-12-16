@@ -1,11 +1,21 @@
 class UsersController < ApplicationController
 
-  before_action :set_user
+  before_action :set_user, only: [:show]
 
-  respond_to :html
+  respond_to :html, except: [:sitemap]
+  respond_to :xml, only: [:sitemap]
 
-  after_action :verify_authorized, except: %i[]
-  after_action :verify_policy_scoped, only: %i[]
+  after_action :verify_authorized, except: %i[index sitemap]
+  after_action :verify_policy_scoped, only: %i[index sitemap]
+
+  def index
+    @transactions = policy_scope(Transaction)
+    # TODO
+  end
+
+  def sitemap
+    # TODO
+  end
 
   def show
     authorize @user

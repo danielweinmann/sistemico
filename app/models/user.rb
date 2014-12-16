@@ -1,16 +1,22 @@
 class User < ActiveRecord::Base
 
-  devise :database_authenticatable, :registerable, :recoverable, :rememberable, :trackable, :validatable
-  
-  has_attached_file :image, styles: { medium: "300x300>", thumb: "100x100>" }
-  validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
+  devise :omniauthable, :omniauth_providers => [:facebook]
 
+  has_many :transactions_from, class_name: "Transaction", foreign_key: "from_user_id"
+  has_many :transactions_to, class_name: "Transaction", foreign_key: "to_user_id"
+  
   validates_uniqueness_of :permalink, allow_nil: true
   # Permalink cannot be a number, so it can't be confused with the id
   validates_format_of :permalink, :with => /[^\d]+/, allow_nil: true
   before_save :clean_permalink
 
-  before_validation :extract_name_from_email
+  def self.from_omniauth(auth)
+    where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
+      user.email = auth.info.email
+      user.name = auth.info.name
+      user.image = auth.info.image
+    end
+  end
 
   def to_param
     (self.permalink && self.permalink.parameterize) || (self.name && "#{self.id}-#{self.name.parameterize}") || self.id
@@ -22,14 +28,15 @@ class User < ActiveRecord::Base
     end
   end
 
+  def balance
+    # TODO
+    0
+  end
+
   private
 
   def clean_permalink
     self.permalink = self.permalink.gsub(/[^0-9a-z]/i, '').downcase if self.permalink
-  end
-
-  def extract_name_from_email
-    self.name = self.email.match(/(.+)@/)[1] unless self.name.present?
   end
 
 end

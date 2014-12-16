@@ -10,6 +10,7 @@ pt:
   logout: 'Sair'
   profile: 'Perfil'
   my_info: 'Meus dados'
+  transfer: 'Enviar sistêmicos'
   languages:
     pt: 'Português'
     es: 'Español'
@@ -29,6 +30,7 @@ pt:
         name: Nome
         image: Foto
         permalink: Permalink
+        balance: Saldo
       transaction:
         from_user: De
         to_user: Para

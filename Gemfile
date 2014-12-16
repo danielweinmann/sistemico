@@ -15,6 +15,7 @@ gem 'responders'
 
 # Authentication and authorization
 gem 'devise'
+gem 'omniauth-facebook'
 gem 'pundit'
 
 # I18n
@@ -43,7 +44,6 @@ gem 'maskmoney-rails'
 
 # Other
 gem 'aws-sdk'
-gem 'rack-timeout'
 
 group :test, :development do
   gem 'rspec-rails'
@@ -61,4 +61,5 @@ group :production do
   # Monitoring with the new new relic
   gem 'newrelic_rpm'
   gem 'rails_12factor'
+  gem 'rack-timeout'
 end

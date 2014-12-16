@@ -1,0 +1,23 @@
+- suppress_headline_and_article!
+- content_for :title do
+  == @user.name
+- content_for :meta_tags do
+  meta name="description" content=@user.name
+  meta name="keywords" content=@user.name
+  meta property="og:title" content=@user.name
+  meta property="og:type" content="website"
+  meta property="og:url" content=user_by_permalink_url(@user)
+  meta property="og:image" content=(@user.image.present? ? @user.image : "#{request.protocol}#{request.host_with_port}#{image_path("logo_facebook.png")}")
+  meta property="og:description" content=@user.name
+  meta name="author" content=@user.name
+- content_for :header do
+  - if @user.image.present?
+    .image= image_tag(@user.image)
+  h1= @user.name
+- content_for :post_header do
+  section.status
+    h2
+      span.number= @user.balance
+      div= User.human_attribute_name(:balance).downcase
+article
+  = link_to t('transfer'), new_user_transaction_path(@user.id), class: "button"

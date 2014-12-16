@@ -22,4 +22,8 @@ class Transaction < ActiveRecord::Base
 
   end
 
+  def self.involving_user(user)
+    where("from_user_id = #{user.id} OR to_user_id = #{user.id}")
+  end
+
 end

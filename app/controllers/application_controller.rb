@@ -2,7 +2,6 @@ class ApplicationController < ActionController::Base
 
   include Pundit
   protect_from_forgery with: :exception
-  before_action :configure_permitted_parameters, if: :devise_controller?
   helper_method :namespace, :add_headline_and_article!, :suppress_headline_and_article!, :add_headline_and_article?, :add_logo!, :suppress_logo!, :add_logo?, :locale_country
 
   after_action :verify_authorized, unless: -> {devise_controller? || self.class == HighVoltage::PagesController}
@@ -14,8 +13,6 @@ class ApplicationController < ActionController::Base
   before_action :current_user
 
   before_filter :set_locale
-
-  # force_ssl if: :in_production?
 
   responders :flash, :location
 
@@ -53,10 +50,8 @@ class ApplicationController < ActionController::Base
     names[0..(names.length-2)].map(&:downcase).join('_')
   end
 
-  def configure_permitted_parameters
-    devise_parameter_sanitizer.for(:account_update) << :name
-    devise_parameter_sanitizer.for(:account_update) << :image
-    devise_parameter_sanitizer.for(:account_update) << :permalink
+  def new_session_path(scope)
+    root_path
   end
 
   def user_not_authorized(exception)
@@ -70,7 +65,7 @@ class ApplicationController < ActionController::Base
       raise I18n::InvalidLocale, params[:locale].to_sym unless locale_country(params[:locale], allow_default_locales?)
       I18n.locale = params[:locale]
       current_user.try(:set_locale, params[:locale])
-    elsif request.method == "GET"
+    elsif request.method == "GET" && !devise_controller?
       new_locale = current_user.try(:locale) || I18n.default_locale
       redirect_to url_for(params.merge(locale: new_locale, only_path: true))
     end

@@ -19,8 +19,9 @@
       span.number= @user.balance
       div= User.human_attribute_name(:balance).downcase
 article
-  = link_to t('transfer'), new_user_transaction_path(@user.id), class: "button"
-  - if @pending.exists?
+  - unless @user == current_user
+    = link_to t('transfer'), new_user_transaction_path(@user.id), class: "button"
+  - if @pending.try(:exists?)
     section.pending
       h3= t('.pending')
       = render partial: 'transactions/transaction', collection: @pending, locals: { show_events: true }

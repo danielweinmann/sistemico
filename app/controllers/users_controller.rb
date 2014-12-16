@@ -15,15 +15,16 @@ class UsersController < ApplicationController
     end
     @transactions = Transaction.involving(@user)
     if policy(@user).update?
+      # This will instantiate UserDecorator for the users
       @pending = @user.transactions_to.with_state(:pending)
+      @pending_from = @pending.map &:from_user
+      @pending_to = @pending.map &:to_user
     else
-      @pending = []
+      @pending = nil
     end
     # This will instantiate UserDecorator for the users
     @from_users = @transactions.map &:from_user
     @to_users = @transactions.map &:to_user
-    @pending_from = @pending.map &:from_user
-    @pending_to = @pending.map &:to_user
     respond_with @user
   end
 

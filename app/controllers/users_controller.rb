@@ -2,20 +2,10 @@ class UsersController < ApplicationController
 
   before_action :set_user, only: [:show]
 
-  respond_to :html, except: [:sitemap]
-  respond_to :xml, only: [:sitemap]
+  respond_to :html
 
-  after_action :verify_authorized, except: %i[index sitemap]
-  after_action :verify_policy_scoped, only: %i[index sitemap]
-
-  def index
-    @transactions = policy_scope(Transaction)
-    # TODO
-  end
-
-  def sitemap
-    # TODO
-  end
+  after_action :verify_authorized, except: %i[]
+  after_action :verify_policy_scoped, only: %i[]
 
   def show
     authorize @user
@@ -23,6 +13,17 @@ class UsersController < ApplicationController
       format = request.format.symbol
       return redirect_to user_by_permalink_path("#{@user.to_param}#{".#{format}" unless format == :html}")
     end
+    @transactions = Transaction.involving(@user)
+    if policy(@user).update?
+      @pending = @user.transactions_to.with_state(:pending)
+    else
+      @pending = []
+    end
+    # This will instantiate UserDecorator for the users
+    @from_users = @transactions.map &:from_user
+    @to_users = @transactions.map &:to_user
+    @pending_from = @pending.map &:from_user
+    @pending_to = @pending.map &:to_user
     respond_with @user
   end
 

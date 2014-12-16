@@ -2,7 +2,7 @@ class TransactionPolicy < ApplicationPolicy
 
   def permitted_attributes
     if create?
-      [:value]
+      [:value, :description]
     else
       []
     end

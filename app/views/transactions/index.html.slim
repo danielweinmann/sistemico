@@ -1,0 +1,4 @@
+- if @transactions.exists?
+  section.transactions
+    h3= t('.transactions')
+    = render @transactions

@@ -5,6 +5,7 @@ class Transaction < ActiveRecord::Base
 
   validates_presence_of :from_user, :to_user, :value
   validates :value, numericality: { only_integer: true, greater_than: 0 }, allow_blank: true
+  validates :description, length: { maximum: 140 }
 
   state_machine initial: :pending do
 
@@ -22,7 +23,7 @@ class Transaction < ActiveRecord::Base
 
   end
 
-  def self.involving_user(user)
+  def self.involving(user)
     where("from_user_id = #{user.id} OR to_user_id = #{user.id}")
   end
 

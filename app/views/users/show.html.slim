@@ -11,9 +11,8 @@
   meta property="og:description" content=@user.name
   meta name="author" content=@user.name
 - content_for :header do
-  - if @user.image.present?
-    .image= image_tag(@user.image)
-  h1= @user.name
+  .image= @user.display_image
+  h1= link_to @user.name, "https://www.facebook.com/#{@user.uid}", target: :_blank
 - content_for :post_header do
   section.status
     h2
@@ -21,3 +20,11 @@
       div= User.human_attribute_name(:balance).downcase
 article
   = link_to t('transfer'), new_user_transaction_path(@user.id), class: "button"
+  - if @pending.exists?
+    section.pending
+      h3= t('.pending')
+      = render partial: 'transactions/transaction', collection: @pending, locals: { show_events: true }
+  - if @transactions.exists?
+    section.transactions
+      h3= t('.transactions')
+      = render @transactions

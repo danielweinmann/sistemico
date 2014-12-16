@@ -4,6 +4,7 @@
 # And so on...
 pt:
   empty: 'Nenhum %{model} encontrado.'
+  to: 'Para'
   destroy: 'Excluir'
   add: 'Adicionar'
   confirm: 'Você está certo disso?'
@@ -11,6 +12,7 @@ pt:
   profile: 'Perfil'
   my_info: 'Meus dados'
   transfer: 'Enviar sistêmicos'
+  transfered: 'Enviou'
   languages:
     pt: 'Português'
     es: 'Español'
@@ -22,8 +24,18 @@ pt:
     pt-BR: 'Português Brasileiro'
     pt-PT: 'Português de Portugal'
   activerecord:
+    state_machines:
+      transaction:
+        state:
+          states:
+            pending: Aguardando
+            approved: Aceito
+            rejected: Recusado
+          events:
+            approve: Aceitar
+            reject: Recusar
     models:
-      transaction: Transação
+      transaction: Envio
       user: Usuário
     attributes:
       user:
@@ -35,6 +47,7 @@ pt:
         from_user: De
         to_user: Para
         value: Valor
+        description: Descrição
   flash:
     actions:
       create:
@@ -50,3 +63,13 @@ pt:
     application:
       love: 'Feito com amor e <a href="https://github.com/danielweinmann/sistemico" target="_blank">Open Source</a> em 2014 ♥'
       by: 'Por <a href="http://fb.com/oswaldooliveirao2" target="_blank">Oswaldo Oliveira</a>, <a href="http://larusso.com.br" target="_blank">Daniel Larusso</a>, <a href="http://fb.com/danielweinmann" target="_blank">Daniel Weinmann</a>, <a href="https://github.com/cuducos" target="_blank">Eduardo Cuducos</a> e <a href="http://henriquebastos.net" target="_blank">Henrique Bastos</a>.'
+  transactions:
+    index:
+      transactions: "Envios recentes"
+  users:
+    show:
+      pending: "Recebimentos pendentes"
+      transactions: "Envios e recebimentos"
+    transactions:
+      new:
+        title: "Enviar sistêmicos para %{user}"

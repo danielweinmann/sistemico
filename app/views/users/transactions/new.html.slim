@@ -1,1 +1,23 @@
-/ TODO add description to transaction
+- suppress_headline_and_article!
+- content_for :title do
+  = t('.title', user: @user.name)
+- content_for :meta_tags do
+  meta name="description" content=t('.title', user: @user.name)
+  meta name="keywords" content=t('.title', user: @user.name)
+  meta property="og:title" content=t('.title', user: @user.name)
+  meta property="og:type" content="website"
+  meta property="og:url" content=request.url
+  meta property="og:image" content=(@user.image.present? ? @user.image : "#{request.protocol}#{request.host_with_port}#{image_path("logo_facebook.png")}")
+  meta property="og:description" content=t('.title', user: @user.name)
+  meta name="author" content=@user.name
+- content_for :header do
+  .image= @user.display_image
+  h1== t('.title', user: link_to(@user.name, user_path(@user)))
+article
+  = form_for @transaction, url: user_transactions_path(@user.id), method: :post do |form|
+    = render partial: 'error_explanation', locals: { resource: @transaction }
+    = form.label :value
+    = form.text_field :value, class: "money"
+    = form.label :description
+    = form.text_field :description
+    .submit= form.submit "Enviar sistêmicos"

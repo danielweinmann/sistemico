@@ -29,8 +29,9 @@ class User < ActiveRecord::Base
   end
 
   def balance
-    # TODO
-    0
+    sum_from = self.transactions_from.with_state(:approved).sum(:value)
+    sum_to = self.transactions_to.with_state(:approved).sum(:value)
+    sum_to - sum_from
   end
 
   private

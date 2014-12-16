@@ -1,4 +1,6 @@
-class TransactionsController < ApplicationController
+class TransactionsController < StateController
+
+  before_action :set_transaction, only: [:approve, :reject]
 
   respond_to :html, except: [:sitemap]
   respond_to :xml, only: [:sitemap]
@@ -18,11 +20,17 @@ class TransactionsController < ApplicationController
   end
 
   def approve
-    # TODO
+    transition_state(@transaction, :approve, user_by_permalink_path(@transaction.to_user))
   end
 
   def reject
-    # TODO
+    transition_state(@transaction, :reject, user_by_permalink_path(@transaction.to_user))
+  end
+
+  private
+
+  def set_transaction
+    @transaction = Transaction.find(params[:id])
   end
 
 end

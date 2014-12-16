@@ -6,7 +6,8 @@ class Users::TransactionsController < ApplicationController
 
   after_action :verify_authorized, except: %i[]
   after_action :verify_policy_scoped, only: %i[]
-  before_action :authenticate_user!
+  # TODO make this work
+  before_action :authenticate_user!, only: %i[new]
 
   def new    
     @transaction = @user.transactions_to.new

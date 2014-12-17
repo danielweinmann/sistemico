@@ -13,7 +13,7 @@ class UsersController < ApplicationController
       format = request.format.symbol
       return redirect_to user_by_permalink_path("#{@user.to_param}#{".#{format}" unless format == :html}")
     end
-    @transactions = Transaction.involving(@user)
+    @transactions = Transaction.involving(@user).with_state(:approved)
     if policy(@user).update?
       # This will instantiate UserDecorator for the users
       @pending = @user.transactions_to.with_state(:pending)

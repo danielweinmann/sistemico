@@ -76,8 +76,8 @@ Rails.application.configure do
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
 
-  config.action_mailer.default_url_options = { :host => 'sistemi.co' }
-  config.action_mailer.asset_host = 'http://sistemi.co'
+  config.action_mailer.default_url_options = { :host => 'sistemico.org' }
+  config.action_mailer.asset_host = 'http://sistemico.org'
 
   config.paperclip_defaults = {
     storage: :s3,
@@ -101,4 +101,4 @@ Rails.application.configure do
   ActionMailer::Base.delivery_method = :smtp
 
 end
-Rails.application.routes.default_url_options[:host]= 'sistemi.co'
+Rails.application.routes.default_url_options[:host]= 'sistemico.org'

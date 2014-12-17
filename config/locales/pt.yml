@@ -68,7 +68,7 @@ pt:
       transactions: "Envios recentes"
   users:
     show:
-      pending: "Recebimentos pendentes"
+      pending: "Envios e recebimentos pendentes"
       transactions: "Envios e recebimentos"
     transactions:
       new:

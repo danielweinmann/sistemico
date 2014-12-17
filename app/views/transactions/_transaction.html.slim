@@ -5,14 +5,14 @@ article.transaction
   .value
     = "#{t('transfered').downcase} "
     span.number= transaction.value
-    = " sistêmicos #{t('to'.downcase)} "
+    = " sistêmicos #{t('to').downcase} "
   .to_user
     .image= transaction.to_user.display_image
     h5= link_to transaction.to_user.name, user_by_permalink_path(transaction.to_user)
   .description= transaction.description
   .status= transaction.human_state_name
   - if defined?(show_events) && show_events
-    - if transaction.can_approve?
+    - if transaction.can_approve? && policy(transaction).approve?
       = link_to t('activerecord.state_machines.transaction.state.events.approve'), approve_transaction_path(transaction), method: :put, class: 'button'
-    - if transaction.can_reject?
+    - if transaction.can_reject? && policy(transaction).reject?
       = link_to t('activerecord.state_machines.transaction.state.events.reject'), reject_transaction_path(transaction), method: :put, class: 'button reject'

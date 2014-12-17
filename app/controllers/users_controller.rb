@@ -13,10 +13,10 @@ class UsersController < ApplicationController
       format = request.format.symbol
       return redirect_to user_by_permalink_path("#{@user.to_param}#{".#{format}" unless format == :html}")
     end
-    @transactions = Transaction.involving(@user).with_state(:approved)
+    @transactions = Transaction.involving(@user).with_state(:approved).order("updated_at DESC")
     if policy(@user).update?
       # This will instantiate UserDecorator for the users
-      @pending = @user.transactions_to.with_state(:pending)
+      @pending = Transaction.involving(@user).with_state(:pending).order("updated_at DESC")
       @pending_from = @pending.map &:from_user
       @pending_to = @pending.map &:to_user
     else

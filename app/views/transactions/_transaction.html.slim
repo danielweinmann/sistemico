@@ -10,6 +10,7 @@ article.transaction
     .image= transaction.to_user.display_image
     h5= link_to transaction.to_user.name, user_by_permalink_path(transaction.to_user)
   .description= transaction.description
+  .created_at= time_ago_in_words(transaction.created_at)
   .status= transaction.human_state_name
   - if defined?(show_events) && show_events
     - if transaction.can_approve? && policy(transaction).approve?

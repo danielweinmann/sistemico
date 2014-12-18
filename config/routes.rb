@@ -8,7 +8,7 @@ Rails.application.routes.draw do
 
   filter :locale, exclude: /^\/users\/auth\/facebook/
   
-  resources :transactions, only: [:index] do
+  resources :transactions, only: [] do
     member do
       put :approve
       put :reject

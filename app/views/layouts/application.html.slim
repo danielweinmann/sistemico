@@ -50,7 +50,7 @@ html
       header
         - if add_logo?
           .logo= link_to :root do
-            h1 Sistêmico
+            h1= image_tag 'logo.png', alt: 'Sistêmico', title: 'Sistêmico'
         - if current_user
           .menu.user
             a.open href="#"

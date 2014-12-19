@@ -1,26 +1,38 @@
 // COLORS BY NAME
 // The colors by name will be used only inside this file, as a reference for other colors.
 // Any reference to color in other stylesheets MUST be semantic
-$ice: #e8e8e8
-$light_ice: #f2f2f2
 
-$gray: #a9a9a9
+// TODO: clean-up & redefine colors (Cuducos commented standard color names,
+// replacing by Sistêmico specific ones in the first block, but more tests are
+// necessary to get the right shades – lighter and darker version of each one)
+
+$ice: #f2f2f2
+$medium_gray: #979797
+$dark_gray: #5e5e5e
+$red: #df595a
+$green: #74be62
+$blue: #5c78fb
+
+// $ice: #e8e8e8
+// $light_ice: #f2f2f2
+
+// $gray: #a9a9a9
 $light_gray: #ddd
-$medium_gray: #888
-$dark_gray: #545454
+// $medium_gray: #888
+// $dark_gray: #545454
 
 $black: black
 $white: white
 
-$blue: #00a0e0
+// $blue: #00a0e0
 $dark_blue: #004080
 $light_blue: #20c0f0
 
-$red: #db6c7f
+// $red: #db6c7f
 $light_red: #eb7c8f
 
+// $green: #669f95
 $light_green: #34dab9
-$green: #669f95
 
 // COLORS BY SEMANTICS
 // These colors should reference colors by name and should have a name associated with its
@@ -29,9 +41,9 @@ $background_color: $white
 $text_color: $dark_gray
 $headline_color: $dark_gray
 $subheadline_color: $blue
-$container_color: $light_ice
+$container_color: $ice
 $border_color: $light_gray
-$strong_border_color: $gray
+$strong_border_color: $medium_gray
 $header_border_color: $black
 $flash_text_color: $white
 $flash_success_color: $green
@@ -40,7 +52,7 @@ $link_color: $blue
 $hover_color: $light_blue
 $box_color: $white
 $box_hover_color: $light_blue
-$box_hover_link_color: $light_ice
+$box_hover_link_color: $ice
 $box_hover_link_hover_color: $white
 $highlight_color: $light_blue
 $button_color: $blue

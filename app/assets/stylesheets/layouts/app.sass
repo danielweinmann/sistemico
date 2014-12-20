@@ -20,7 +20,7 @@
   .failure, .error, .alert
     background-color: $flash_failure_color
 #pre_header_wrapper
-  background-color: $ice
+  background-color: $header_background_color
   header
     +outer-container
     .logo
@@ -36,11 +36,11 @@
           +media($desktop)
             height: auto
     .sign_in, .user
-      color: $medium_gray
+      color: $header_text_color
       display: none
       float: right
       font-size: 0.8em
-      font-weight: bold
+      font-weight: $bold_weight 
       text-align: right
       margin-top: 2em
       width: 20%

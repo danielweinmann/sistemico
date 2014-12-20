@@ -104,16 +104,16 @@
   >section
     +span-columns(6)
 #footer_wrapper
-  padding: 2.5em 0 2em 0
   background: $footer_color
+  padding: 4em 0 1.5em 0
+  bottom: 0
   footer
     +outer-container
     text-align: center
     a
       text-decoration: none
     h4
-      +span-columns(6)
-      margin-bottom: 2em
+      margin-bottom: 1em
       a
         color: $footer_text_color
         text-decoration: none
@@ -121,31 +121,37 @@
         line-height: 1.2em
         &:hover
           opacity: 0.8
+      img
+        height: 17px
+        width: 114px
     h5
       color: $footer_text_color
+      font-weight: normal
+      width: 90%
+      margin-left: 5%
+      +media($desktop)
+        width: auto
+        margin-left: 0
     .user
       +span-columns(6)
-      margin-bottom: 4em
       +media($desktop)
         display: none
       a
-        +sistemico_button
-        font-size: 1em
-        line-height: 1.5em
-        margin-left: 0em
-        display: block
-        margin-bottom: 1em
-    .credits
-      +span-columns(6)
+        +sistemico_mobile_button
     .links
-      +span-columns(6)
+      margin-bottom: 2em
       +media($desktop)
         +span-columns(6)
         +shift(3)
-      margin-bottom: 2em
+        margin-bottom: 4em
       h5
-        +span-columns(2)
-        +omega(3n)
+        a
+          +sistemico_mobile_button
+    .credits
+      +span-columns(6)
+      a
+        color: $footer_text_color
+        font-weight: bold
     .flags
       +span-columns(6) 
       margin-top: 2em

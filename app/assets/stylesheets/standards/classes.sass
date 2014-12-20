@@ -1,16 +1,45 @@
+// TODO edit this mixin to style desktop buttons
 @mixin sistemico_button
   background: $button_color
-  padding: 0.2em 1.2em
-  border-radius: 0.4em
-  border: none
-  text-align: center
+  border: 0
+  border-radius: 1em
   color: $button_text_color
-  font-weight: $bold_weight
-  font-size: 2.2em
-  line-height: 100%
-  text-decoration: none
-  width: auto
   cursor: pointer
+  display: block
+  font: 1em $standard_font
+  letter-spacing: .2em
+  margin-bottom: 1em
+  padding: .75em 2em
+  text-align: center
+  text-decoration: none
+  text-transform: uppercase
+  width: golen-ratio(100%, 1)
+  +media($desktop)
+    display: inline 
+    margin: 0
+    width: auto
+  &:hover
+    background: $button_hover_color
+    color: $button_text_color
+@mixin sistemico_mobile_button
+  background: $button_color
+  border: 0
+  border-radius: 3em
+  color: $button_text_color
+  cursor: pointer
+  display: block
+  font: 1em $standard_font
+  letter-spacing: .2em
+  margin-bottom: 1em
+  padding: .75em 2em
+  text-align: center
+  text-decoration: none
+  text-transform: uppercase
+  width: golen-ratio(100%, 1)
+  +media($desktop)
+    display: inline
+    margin: 0
+    width: auto
   &:hover
     background: $button_hover_color
     color: $button_text_color

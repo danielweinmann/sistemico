@@ -73,3 +73,4 @@ pt:
     transactions:
       new:
         title: "Enviar sistêmicos para %{user}"
+  help: 'Ajuda e contato'

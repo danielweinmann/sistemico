@@ -21,30 +21,70 @@
   background-color: $ice
   header
     +outer-container
-    line-height: 3em
     .logo
-      float: left
+      padding: 0 0 .7em 0
+      text-align: center
+      +media($desktop)
+        float: left
+        padding: 1.1em 0 1.2em 0
       a
         text-decoration: none
         img
-          margin-top: .6em
+          height: .5em
+          +media($desktop)
+            height: auto
     .sign_in, .user
-      padding: 1em 0
-      font-size: 0.8em
-      width: 20%
+      color: $medium_gray
       display: none
-      color: $text_color
       float: right
+      font-size: 0.8em
+      font-weight: bold
       text-align: right
+      margin-top: 2em
+      width: 20%
       a
-        width: 100%
-        color: $text_color
+        color: $medium_gray
         text-decoration: none
-        margin-left: 1.5em
+        width: 100%
         &:hover
           color: $link_color
       +media($desktop)
         display: block
+    .user
+      cursor: pointer
+      margin-top: 1em
+      text-align: center
+      width: golden-ratio(48px, 1)
+      img
+        border-radius: 512px
+        -o-border-radius: 512px
+        -moz-border-radius: 512px 
+        -webkit-border-radius: 521px
+        height: 48px
+        width: 48px
+      nav
+        background-color: $container_color
+        border: 0
+        border-radius: 5px
+        -o-border-radius: 5px
+        -moz-border-radius: 5px 
+        -webkit-border-radius: 5px
+        display: none
+        padding: .3em 0 0 0
+        position: absolute
+        transform: translateX(-19%)
+        width: golden-ratio(48px, 2)
+        z-index: 500
+        a
+          display: block
+          text-align: center
+          text-decoration: none
+          &:hover
+            text-decoration: none
+      &:hover
+        nav
+          display: block 
+
 #header_wrapper
   header
     text-align: center

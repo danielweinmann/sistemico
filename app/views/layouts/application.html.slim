@@ -36,7 +36,10 @@ html
       })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
       ga('create', 'UA-43352814-4', 'unlock.fund');
     = javascript_include_tag "application" 
-    = csrf_meta_tags 
+    = csrf_meta_tags
+    / TODO remove this when front-end is considered done
+    = stylesheet_link_tag 'http://basehold.it/24/223/89/90/0.2' if Rails.env.development?
+      
   body[data-namespace="#{namespace}" data-controller="#{controller_name}" data-action="#{action_name}" data-locale="#{I18n.locale}" data-facebook_app_id="#{ENV['FACEBOOK_APP_ID']}"]
     - if Rails.env.production?
       javascript:
@@ -53,12 +56,9 @@ html
             h1= image_tag 'logo.png', alt: 'Sistêmico', title: 'Sistêmico'
         - if current_user
           .menu.user
-            a.open href="#"
-              = truncate current_user.name, length: 18
-              span ▾
+            = current_user.display_image
             nav
               = link_to t('profile'), user_by_permalink_path(current_user)
-              hr
               = link_to t('logout'), destroy_user_session_path
         - else
           nav.sign_in

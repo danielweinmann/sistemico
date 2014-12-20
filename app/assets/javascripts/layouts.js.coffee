@@ -1,8 +1,9 @@
 $(document).ready ->
-  $(".open").on "click", (event) ->
-    event.preventDefault()
-    event.stopPropagation()
-    $(@).parent().find("nav").toggle()
+  # TODO: user menu works via CSS, must chekc if this code is used elsewhere
+  # $(".open").on "click", (event) ->
+  #  event.preventDefault()
+  #  event.stopPropagation()
+  #  $(@).parent().find("nav").toggle()
   $("input").click (event) ->
     event.stopPropagation()
   setTimeout (->
@@ -13,7 +14,8 @@ $(document).ready ->
   ), 16000
   $(window).on "click", ->
     $('#flash').slideUp('slow')
-    $('.open').parent().find("nav").hide()
+    # TODO: user menu works via CSS, must chekc if this code is used elsewhere
+    # $('.open').parent().find("nav").hide()
   $('.money').maskMoney
     thousands: ''
     decimal: ''

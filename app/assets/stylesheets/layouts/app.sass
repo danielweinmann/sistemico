@@ -51,7 +51,10 @@
       +media($desktop)
         display: block
     .user
+      background: transparent url('user.svg') no-repeat center center
+      background-size: contain
       cursor: pointer
+      height: 48px
       margin-top: 1em
       text-align: center
       width: golden-ratio(48px, 1)
@@ -70,8 +73,9 @@
         -moz-border-radius: 5px 
         -webkit-border-radius: 5px
         display: none
-        padding: .3em 0 0 0
+        padding: 1em 0 0 0
         position: absolute
+        top: 5em
         transform: translateX(-19%)
         width: golden-ratio(48px, 2)
         z-index: 500
@@ -83,8 +87,7 @@
             text-decoration: none
       &:hover
         nav
-          display: block 
-
+          display: block
 #header_wrapper
   header
     text-align: center

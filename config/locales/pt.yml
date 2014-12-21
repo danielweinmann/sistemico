@@ -9,7 +9,7 @@ pt:
   add: 'Adicionar'
   confirm: 'Você está certo disso?'
   logout: 'Sair'
-  profile: 'Minhas transações'
+  profile: 'Envios e recebimentos'
   my_info: 'Meus dados'
   transfer: 'Enviar sistêmicos'
   transfered: 'Enviou'

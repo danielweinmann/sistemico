@@ -13,6 +13,7 @@ pt:
   my_info: 'Meus dados'
   transfer: 'Enviar sistêmicos'
   transfered: 'Enviou'
+  help: 'Ajuda e contato'
   languages:
     pt: 'Português'
     es: 'Español'
@@ -73,4 +74,3 @@ pt:
     transactions:
       new:
         title: "Enviar sistêmicos para %{user}"
-  help: 'Ajuda e contato'

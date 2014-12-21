@@ -36,7 +36,10 @@ html
       })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
       ga('create', 'UA-43352814-4', 'unlock.fund');
     = javascript_include_tag "application" 
-    = csrf_meta_tags 
+    = csrf_meta_tags
+    / TODO remove this when front-end is considered done
+    = stylesheet_link_tag 'http://basehold.it/24/223/89/90/0.2' if Rails.env.development?
+      
   body[data-namespace="#{namespace}" data-controller="#{controller_name}" data-action="#{action_name}" data-locale="#{I18n.locale}" data-facebook_app_id="#{ENV['FACEBOOK_APP_ID']}"]
     - if Rails.env.production?
       javascript:
@@ -53,12 +56,9 @@ html
             h1= image_tag 'logo.png', alt: 'Sistêmico', title: 'Sistêmico'
         - if current_user
           .menu.user
-            a.open href="#"
-              = truncate current_user.name, length: 18
-              span ▾
+            = current_user.display_image
             nav
               = link_to t('profile'), user_by_permalink_path(current_user)
-              hr
               = link_to t('logout'), destroy_user_session_path
         - else
           nav.sign_in
@@ -84,21 +84,21 @@ html
         section.user
           nav
             - if current_user
-              = link_to t('profile'), user_by_permalink_path(current_user)
-              = link_to t('logout'), destroy_user_session_path
+              h5== link_to t('profile'), user_by_permalink_path(current_user)
+              h5== link_to t('logout'), destroy_user_session_path
             - elsif namespace != "devise"
-              = link_to t('devise.shared.links.sign_in_with_provider', provider: 'Facebook'), user_omniauth_authorize_path(:facebook)
-        / section.links
-        /   h5
-        /     a href='https://unlock.fund/unlock' target='_blank'= t('about')
-        /   h5
-        /     a href='https://www.facebook.com/groups/unlock.fund/' target='_blank'= t('help')
-        /   h5
-        /     a href='https://unlock.fund/pages/terms' target='_blank'= t('terms')
+              h5== link_to t('devise.shared.links.sign_in_with_provider', provider: 'Facebook'), user_omniauth_authorize_path(:facebook)
+        section.links
+          / h5
+          /   a href='https://unlock.fund/unlock' target='_blank'= t('about')
+          h5
+            a href='https://www.facebook.com/groups/sistemico/' target='_blank'= t('help')
+          / h5
+          /   a href='https://unlock.fund/pages/terms' target='_blank'= t('terms')
         section.credits
-          / h4
-          /   = link_to :root do
-          /     = image_tag 'logo_footer.png', alt: "Unlock", title: "Unlock"
+          h4
+            = link_to :root do
+              = image_tag 'logo.png', alt: "Sistêmico", title: "Sistêmico"
           h5== t('.love')
           h5== t('.by')
         / - if request.method == "GET" && I18n.available_locales.size > 1

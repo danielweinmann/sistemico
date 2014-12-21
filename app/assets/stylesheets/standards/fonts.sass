@@ -1,10 +1,10 @@
-// system fonts
-$standard_font: 'Helvetica Neue', Arial, Helvetica, sans-serif
-$headline_font: 'Helvetica Neue', Arial, Helvetica, sans-serif
-$subheadline_font: Georgia, Times, "Times New Roman", serif
-
-// external fonts
 $asset-pipeline: true
 +font-face(SourceSansPro     , 'SourceSansPro/SourceSansPro-Regular')
 +font-face(SourceSansPro     , 'SourceSansPro/SourceSansPro-Bold', bold)
 +font-face(SourceSansProLight, 'SourceSansPro/SourceSansPro-Light')
+
+$standard_font: SourceSansPro, 'Helvetica Neue', Arial, Helvetica, sans-serif
+$headline_font: SourceSansProLight, 'Helvetica Neue', Arial, Helvetica, sans-serif
+$subheadline_font: Georgia, Times, "Times New Roman", serif
+
+// TODO: check need for $subheadline_font (and maybe delete it)

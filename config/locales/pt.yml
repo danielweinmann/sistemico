@@ -9,10 +9,11 @@ pt:
   add: 'Adicionar'
   confirm: 'Você está certo disso?'
   logout: 'Sair'
-  profile: 'Perfil'
+  profile: 'Envios e recebimentos'
   my_info: 'Meus dados'
   transfer: 'Enviar sistêmicos'
   transfered: 'Enviou'
+  help: 'Ajuda e contato'
   languages:
     pt: 'Português'
     es: 'Español'
@@ -62,7 +63,7 @@ pt:
   layouts:
     application:
       love: 'Feito com amor e <a href="https://github.com/danielweinmann/sistemico" target="_blank">Open Source</a> em 2014 ♥'
-      by: 'Por <a href="http://fb.com/oswaldooliveirao2" target="_blank">Oswaldo Oliveira</a>, <a href="http://larusso.com.br" target="_blank">Daniel Larusso</a>, <a href="http://fb.com/danielweinmann" target="_blank">Daniel Weinmann</a>, <a href="https://github.com/cuducos" target="_blank">Eduardo Cuducos</a> e <a href="http://henriquebastos.net" target="_blank">Henrique Bastos</a>.'
+      by: 'Por <a href="http://fb.com/oswaldooliveirao2" target="_blank">Oswaldo Oliveira</a>, <a href="http://larusso.com.br" target="_blank">Daniel Larusso</a>, <a href="http://fb.com/danielweinmann" target="_blank">Daniel Weinmann</a>, <a href="http://cuducos.me" target="_blank">Eduardo Cuducos</a> e <a href="http://henriquebastos.net" target="_blank">Henrique Bastos</a>.'
   transactions:
     index:
       transactions: "Envios recentes"

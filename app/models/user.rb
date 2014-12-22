@@ -18,6 +18,10 @@ class User < ActiveRecord::Base
     end
   end
 
+  def self.with_transactions
+    where("id IN (SELECT DISTINCT from_user_id FROM transactions) OR id IN (SELECT DISTINCT to_user_id FROM transactions)")
+  end
+
   def to_param
     (self.permalink && self.permalink.parameterize) || (self.name && "#{self.id}-#{self.name.parameterize}") || self.id
   end

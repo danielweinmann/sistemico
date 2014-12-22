@@ -13,10 +13,12 @@ class TransactionsController < StateController
     # This will instantiate UserDecorator for the users
     @from_users = @transactions.map &:from_user
     @to_users = @transactions.map &:to_user
+    respond_with @transactions
   end
 
   def sitemap
-    # TODO
+    @users = policy_scope(User).with_transactions.order("updated_at DESC")
+    respond_with @users
   end
 
   def approve

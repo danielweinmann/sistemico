@@ -14,7 +14,6 @@ html
       meta property="og:title" content=yield(:title)
       meta property="og:type" content="website"
       meta property="og:url" content=(content_for?(:url) ? yield(:url) : request.url)
-      / TODO logo_facebook.png
       meta property="og:image" content=="#{request.protocol}#{request.host_with_port}#{image_path("logo_facebook.png")}"
       meta property="og:description" content=yield(:title)
       meta name="author" content="Oswaldo Oliveira"

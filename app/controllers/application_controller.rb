@@ -51,8 +51,7 @@ class ApplicationController < ActionController::Base
   end
 
   def new_session_path(scope)
-    # TODO make this work the same as authenticate_user!
-    root_path
+    new_user_session_path
   end
 
   def user_not_authorized(exception)

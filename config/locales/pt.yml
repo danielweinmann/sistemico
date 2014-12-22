@@ -23,7 +23,7 @@ pt:
     es-MX: 'Español Mexicano'
     es-CO: 'Español Colombiano'
     pt-BR: 'Português Brasileiro'
-    pt-PT: 'Português de Portugal'
+    pt-PT: 'Português de Portugal' 
   activerecord:
     state_machines:
       transaction:
@@ -66,7 +66,16 @@ pt:
       by: 'Por <a href="http://fb.com/oswaldooliveirao2" target="_blank">Oswaldo Oliveira</a>, <a href="http://larusso.com.br" target="_blank">Daniel Larusso</a>, <a href="http://fb.com/danielweinmann" target="_blank">Daniel Weinmann</a>, <a href="http://cuducos.me" target="_blank">Eduardo Cuducos</a> e <a href="http://henriquebastos.net" target="_blank">Henrique Bastos</a>.'
   transactions:
     index:
-      transactions: "Envios recentes"
+      transactions: "Últimas transações"
+      h2: "Sistêmico é uma não-moeda abundante e aberta."
+      h3: "É baseado em uma fonte inesgotável de valor: você."
+      h4: "Comece agora a enviar e receber Sistêmicos."
+      icons:
+        safe: "Seguro e transparente"
+        trust: "Baseado na confiança"
+        free: "Gratuito e inclusivo"
+        digital: "100% digital"
+    time_ago: 'atrás'
   users:
     show:
       pending: "Envios e recebimentos pendentes"

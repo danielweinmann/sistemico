@@ -9,7 +9,7 @@
   font: 1em $standard_font
   letter-spacing: .2em
   margin-bottom: 1em
-  padding: .75em 2em
+  padding: 2em
   text-align: center
   text-decoration: none
   text-transform: uppercase
@@ -65,38 +65,107 @@
   margin-bottom: 2em
 .warning
   +sistemico_warning
-// TODO user/login menu works slighthly differently now (must check if this
-// code is used elsewhere in the platform)
-//
-// .menu
-//  position: relative
-//  .open
-//    text-decoration: none
-//    color: $subheadline_color
-//    &:hover
-//      color: $hover_color
-//  nav
-//    z-index: 500
-//    position: absolute
-//    top: 3em
-//    left: 0
-//    min-width: 100%
-//    display: none
-//    background-color: $container_color
-//    border: 1px solid $border_color
-//    a
-//      text-decoration: none
-//      display: block
-//      padding: 0.5em
-//      color: $subheadline_color
-//      margin: 0 !important
-//      color: $text_color !important
-//      &:hover
-//        background-color: $highlight_color
-//        text-decoration: none !important
-//
-.transaction
+.transactions
+  margin: 1em 0 3em 0
+  text-align: center
   +span-columns(6)
-  background-color: $container_color
-  border-bottom: 0.2em solid $border_color
-  margin-top: 1em
+  h3, article
+    margin: 0 0 3em 0
+  h3
+    font: normal $normal_weight .8em $standard_font
+    letter-spacing: .2em
+    margin-top: 1em
+    text-transform: uppercase
+  article
+    background-color: $box_color
+    a
+      color: $text_color 
+      font-weight: $bold_weight
+      text-decoration: none
+      &:hover
+        color: $link_color
+    .from_user, .to_user
+      span
+        display: block
+        font-weight: $normal_weight
+        text-transform: lowercase
+    .from_user
+      background: transparent url('transaction_conectors_mobile.svg') repeat-y center top / contain
+      padding: 1em 0
+      text-align: center
+    .images
+      background: transparent url('transaction_arrows_mobile.svg') no-repeat center center / contain
+      .from, .to
+        float: left
+        margin: 0
+        width: 33%
+        img
+          border: 5px solid $container_color
+          border-radius: 50%
+          width: 100%
+      .to
+        float: right
+      &:after
+        content: "."
+        display: block
+        clear: both
+        visibility: hidden
+        line-height: 0
+        height: 0
+    .value
+      clear: both
+      letter-spacing: .2em
+      text-transform: uppercase
+      span.number
+        display: block
+        font-size: 3.5em
+        letter-spacing: normal
+        line-height: 1
+    .to_user
+      background: transparent url('speech_bubble_arrow_mobile.svg') no-repeat bottom center / contain
+      padding: 2em 0
+    .description
+      background-color: $container_color
+      border-radius: 1em
+      padding: .5em
+      text-align: left
+    .created_at
+      padding: .5em 0
+    +media($desktop)
+      border-radius: 1em
+      position: relative
+      .from_user, .to_user
+        font-size: 1.2em
+        span
+          display: inline 
+      .from_user
+        background-image: url('transaction_conectors_desktop.svg')
+        padding: .8em 0 0 0
+      .images
+        background-image: url('transaction_arrows_desktop.svg')
+        transform: translateY(-0.8em)
+        -webkit-transform: translateY(-0.8em)
+        .from, .to
+          margin: 0 15%
+          width: 20%
+        .to
+          float: right
+      .value
+        position: absolute
+        top: 3.8em
+        width: 100%
+        span
+          margin-bottom: .5em
+      .to_user
+        background-image: url('speech_bubble_arrow_desktop.svg')
+        padding: 0
+        h5
+          margin: 0
+          transform: translateY(-1.8em)
+          -webkit-transform: translateY(-1.8em)
+      .description
+        margin-left: 20%
+        padding: 1em
+        width: 60%
+      .created_at
+        padding: .5em 0

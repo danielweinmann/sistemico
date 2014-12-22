@@ -1,17 +1,22 @@
 article.transaction
   .from_user
-    .image= transaction.from_user.display_image
-    h5= link_to transaction.from_user.name, user_by_permalink_path(transaction.from_user)
+    h5
+      = link_to transaction.from_user.name, user_by_permalink_path(transaction.from_user)
+      span= " #{t('transfered')}"
+  .images
+    .from= link_to transaction.from_user.display_image, user_by_permalink_path(transaction.from_user)
+    .to= link_to transaction.to_user.display_image, user_by_permalink_path(transaction.to_user)
   .value
-    = "#{t('transfered').downcase} "
-    span.number= transaction.value
-    = " sistêmicos #{t('to').downcase} "
+    span.number= "#{transaction.value} "
+    |sistêmicos
   .to_user
-    .image= transaction.to_user.display_image
-    h5= link_to transaction.to_user.name, user_by_permalink_path(transaction.to_user)
+    h5
+      span= "#{t('to')} "
+      = link_to transaction.to_user.name, user_by_permalink_path(transaction.to_user)
   .description= transaction.description
-  .created_at= time_ago_in_words(transaction.created_at)
-  .status= transaction.human_state_name
+  .created_at= "#{time_ago_in_words(transaction.created_at)} #{t('transactions.time_ago')}"
+  / TODO confirm if pending trasactions will be listed here 
+  / .status= transaction.human_state_name
   - if defined?(show_events) && show_events
     - if transaction.can_approve? && policy(transaction).approve?
       = link_to t('activerecord.state_machines.transaction.state.events.approve'), approve_transaction_path(transaction), method: :put, class: 'button'

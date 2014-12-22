@@ -9,7 +9,7 @@ pt:
   add: 'Adicionar'
   confirm: 'Você está certo disso?'
   logout: 'Sair'
-  profile: 'Envios e recebimentos'
+  profile: 'Minhas transações'
   my_info: 'Meus dados'
   transfer: 'Enviar sistêmicos'
   transfered: 'Enviou'
@@ -43,7 +43,7 @@ pt:
         name: Nome
         image: Foto
         permalink: Permalink
-        balance: Saldo
+        balance: "Sistêmico"
       transaction:
         from_user: De
         to_user: Para
@@ -65,6 +65,10 @@ pt:
       love: 'Feito com amor e <a href="https://github.com/danielweinmann/sistemico" target="_blank">Open Source</a> em 2014 ♥'
       by: 'Por <a href="http://fb.com/oswaldooliveirao2" target="_blank">Oswaldo Oliveira</a>, <a href="http://larusso.com.br" target="_blank">Daniel Larusso</a>, <a href="http://fb.com/danielweinmann" target="_blank">Daniel Weinmann</a>, <a href="http://cuducos.me" target="_blank">Eduardo Cuducos</a> e <a href="http://henriquebastos.net" target="_blank">Henrique Bastos</a>.'
   transactions:
+    singular: 'Transação'
+    plural: 'Transações'
+    confirmed: 'realizada'
+    pending: 'pendente'
     index:
       transactions: "Últimas transações"
       h2: "Sistêmico é uma não-moeda abundante e aberta."
@@ -77,9 +81,17 @@ pt:
         digital: "100% digital"
     time_ago: 'atrás'
   users:
+    send: "Enviar sistêmicos para %{user}"
     show:
+      no_positive_balance_needed: 'Você não precisa ter saldo positivo.'
+      status_balanced: "%{user} está em equilíbrio."
+      status_inactive: "%{user} ainda não fez nenhuma transação."
+      status_unbalenced_positive: "%{user} está acumulando."
+      status_unbalenced_negative: "%{user} está devendo."
+      transactions:
+        singular: 'Transação'
+        plural: 'Transações'
+        confirmed: 'realizada'
+        pending: 'pendente'
+        warning: 'Transações aceitas não podem ser desfeitas. São contabilizadas e publicadas.'
       pending: "Envios e recebimentos pendentes"
-      transactions: "Envios e recebimentos"
-    transactions:
-      new:
-        title: "Enviar sistêmicos para %{user}"

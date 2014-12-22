@@ -1,38 +1,88 @@
+// TODO: check if user classes defined here (.status, .user_profile) are used
+// elsewhere (and maybe move them to classes.sass)
 body[data-action="show"][data-controller="users"][data-namespace="null"]
-  #header_wrapper header
-    h1
-      margin: 0 auto
-      padding-bottom: 1em
-      width: 92%
-      +media($tablet)
-        width: 90%
+  #header_wrapper
+    header
+      background: transparent image-url('profile_conector.png') repeat-y center top
+      padding: 3em 0 0 0
+      .user_profile
+        position: relative
+        .image
+          position: absolute
+          text-align: center
+          top: 0
+          width: 100%
+          .avatar, .facebook
+            position: static
+          .avatar
+            img
+              background-color: $container_color
+              border: 5px solid $container_color
+              border-radius: 50%
+              height: 62% 
+              width: 62%
+          .facebook
+            img
+              width: 1.5em
+              height: 1.5em
       +media($desktop)
-        width: 70%
+        padding: 7em 0 0 0
+        .user_profile
+          .image
+            .avatar
+              img
+                width: 14em
+                height: 14em
   #post_header_wrapper
-    background-color: $container_color
-    .status
-      margin-left: auto
-      margin-right: auto
-      width: 92%
-      +media($tablet)
-        width: 90%
-      +media($desktop)
-        width: 70%
-      h2
-        color: $text_color
-        font-weight: $normal_weight
-        font-size: 1.5em
+    header
+      .status
+        padding: 10em 0 2em 0
         text-align: center
-        padding-top: 2em
-        span.number
-          color: $link_color
-          font-size: 3em
-          font-weight: $bold_weight
-  #content
-    margin-left: auto
-    margin-right: auto
-    width: 92%
-    +media($tablet)
-      width: 90%
+        h1, h2
+          color: $button_text_color
+          font: normal $normal_weight 1.2em $headline_font
+        h1
+          margin-bottom: 1em
+        h2
+          font-size: 1em
+          letter-spacing: .2em
+          text-transform: uppercase
+          .number
+            display: block
+            font: normal $normal_weight 4em $standard_font
+        &.inactive
+          background-color: $user_inactive_color
+        &.unbalanced
+          background-color: $user_unbalanced_color
+        &.balanced
+          background-color: $user_balanced_color
+      +media($desktop)
+        margin: 0
+        .status
+          padding-top: 11em
+  #content_wrapper
+    background-color: $background_color
+    margin-top: 3em
+    #content
+      .send
+        a.button
+          margin: 1em auto 0 auto
+          width: 90%
+        .tip
+          color: $header_text_color 
+          font: normal $normal_weight .9em $standard_font
+          margin: 0 0 2.5em 0
+          text-align: center
     +media($desktop)
-      width: 70%
+      #content
+        max-width: 100%
+        margin: 0
+        .send
+          padding: 3em 0
+          text-align: center
+          .tip
+            margin-top: 2.3em
+        .pending_transactions
+          padding: 3em 0
+        .confirmed_transactions
+          background-color: $container_color

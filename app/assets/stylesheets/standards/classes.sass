@@ -1,26 +1,3 @@
-// TODO edit this mixin to style desktop buttons
-@mixin sistemico_button
-  background: $button_color
-  border: 0
-  border-radius: 1em
-  color: $button_text_color
-  cursor: pointer
-  display: block
-  font: 1em $standard_font
-  letter-spacing: .2em
-  margin-bottom: 1em
-  padding: 2em
-  text-align: center
-  text-decoration: none
-  text-transform: uppercase
-  width: golen-ratio(100%, 1)
-  +media($desktop)
-    display: inline 
-    margin: 0
-    width: auto
-  &:hover
-    background: $button_hover_color
-    color: $button_text_color
 @mixin sistemico_mobile_button
   background: $button_color
   border: 0
@@ -37,12 +14,16 @@
   text-transform: uppercase
   width: golen-ratio(100%, 1)
   +media($desktop)
-    display: inline
+    display: inline 
     margin: 0
     width: auto
   &:hover
     background: $button_hover_color
     color: $button_text_color
+@mixin sistemico_button
+  +sistemico_mobile_button
+  border-radius: 1em
+  padding: 2em
 @mixin sistemico_warning
   background-color: tint($flash_failure_color, 80%)
   padding: 2em
@@ -52,8 +33,10 @@
   h3
     margin-bottom: 1em
   margin-bottom: 2em
-.button
-  +sistemico_button
+.button, a.button
+  +sistemico_mobile_button
+  +media($desktop)
+    +sistemico_button
 .reject
   background: $careful_color
   &:hover
@@ -66,25 +49,33 @@
 .warning
   +sistemico_warning
 .transactions
-  margin: 1em 0 3em 0
+  background-color: $container_color
+  padding: 0 0 3em 0
   text-align: center
-  +span-columns(6)
+  h2
+    font: normal $normal_weight 1em $headline_font
+    letter-spacing: .2em
+    text-transform: uppercase
+    .number
+      display: block
+      font: normal $normal_weight 4em $standard_font
   h3, article
     margin: 0 0 3em 0
   h3
     font: normal $normal_weight .8em $standard_font
     letter-spacing: .2em
-    margin-top: 1em
+    padding-top: 2.5em
     text-transform: uppercase
-  article
+  .transaction
+    margin: 1em 0 3em 0
     background-color: $box_color
-    a
-      color: $text_color 
-      font-weight: $bold_weight
-      text-decoration: none
-      &:hover
-        color: $link_color
     .from_user, .to_user
+      a
+        color: $text_color 
+        font-weight: $bold_weight
+        text-decoration: none
+        &:hover
+          color: $link_color
       span
         display: block
         font-weight: $normal_weight
@@ -127,11 +118,35 @@
     .description
       background-color: $container_color
       border-radius: 1em
+      margin: 0 1%
       padding: .5em
       text-align: left
     .created_at
       padding: .5em 0
-    +media($desktop)
+    .buttons
+      padding: 1em 0
+      a
+        display: block
+        float: right
+        font-size: .8em
+        margin: 0 5% 0 0
+        width: 40%
+        &:last-child
+          margin: 0 10% 0 0
+      a.reject
+        background-color: $medium_gray
+      p
+        clear: both
+        color: $user_inactive_color
+        font-size: .8em
+        line-height: 1.2
+        margin: 0 auto
+        padding: 1em 0
+        width: 90%
+  +media($desktop)
+    +outer-container
+    .transaction
+      width: auto
       border-radius: 1em
       position: relative
       .from_user, .to_user
@@ -148,8 +163,8 @@
         .from, .to
           margin: 0 15%
           width: 20%
-        .to
-          float: right
+          .to
+            float: right
       .value
         position: absolute
         top: 3.8em
@@ -169,3 +184,37 @@
         width: 60%
       .created_at
         padding: .5em 0
+      .buttons
+        a
+          font-size: 1em
+          margin-right: 20%
+          width: 20%
+          &:last-child
+            margin-right: 20%
+        p
+          width: 30%
+.transactions.pending
+  background-color: $background-color
+  .transaction
+    background-color: $container-color
+    .from_user
+      background-image: image-url('pending_transaction_conectors_mobile.svg')
+    .images
+      background-image: image-url('pending_transaction_arrows_mobile.svg')
+      .from, .to
+        img
+          border-color: $background_color
+    .to_user
+      background-image: image-url('pending_speech_bubble_arrow_mobile.svg')
+    .description
+      background-color: $background_color
+    +media($desktop)
+      .from_user
+        background-image: image-url('pending_transaction_conectors_desktop.svg')
+      .images
+        background-image: image-url('pending_transaction_arrows_desktop.svg')
+      .to_user
+        background-image: image-url('pending_speech_bubble_arrow_desktop.svg')
+
+
+

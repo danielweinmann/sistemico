@@ -90,11 +90,11 @@
         font-weight: $normal_weight
         text-transform: lowercase
     .from_user
-      background: transparent url('transaction_conectors_mobile.svg') repeat-y center top / contain
+      background: transparent image-url('transaction_conectors_mobile.svg') repeat-y center top / contain
       padding: 1em 0
       text-align: center
     .images
-      background: transparent url('transaction_arrows_mobile.svg') no-repeat center center / contain
+      background: transparent image-url('transaction_arrows_mobile.svg') no-repeat center center / contain
       .from, .to
         float: left
         margin: 0
@@ -122,7 +122,7 @@
         letter-spacing: normal
         line-height: 1
     .to_user
-      background: transparent url('speech_bubble_arrow_mobile.svg') no-repeat bottom center / contain
+      background: transparent image-url('speech_bubble_arrow_mobile.svg') no-repeat bottom center / contain
       padding: 2em 0
     .description
       background-color: $container_color
@@ -139,10 +139,10 @@
         span
           display: inline 
       .from_user
-        background-image: url('transaction_conectors_desktop.svg')
+        background-image: image-url('transaction_conectors_desktop.svg')
         padding: .8em 0 0 0
       .images
-        background-image: url('transaction_arrows_desktop.svg')
+        background-image: image-url('transaction_arrows_desktop.svg')
         transform: translateY(-0.8em)
         -webkit-transform: translateY(-0.8em)
         .from, .to
@@ -157,7 +157,7 @@
         span
           margin-bottom: .5em
       .to_user
-        background-image: url('speech_bubble_arrow_desktop.svg')
+        background-image: image-url('speech_bubble_arrow_desktop.svg')
         padding: 0
         h5
           margin: 0

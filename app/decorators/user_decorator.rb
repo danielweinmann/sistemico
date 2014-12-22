@@ -9,9 +9,9 @@ module UserDecorator
   end
 
   def balance_label
-    label = t('activerecord..attributes.user.balance') 
+    label = t('activerecord.attributes.user.balance').downcase 
     if self.balance == 0
-        label.pluralize(2) # force Sistêmicos (in the plural) when 0
+      label.pluralize(2) # force Sistêmicos (in the plural) when 0
     else
       label.pluralize(self.balance)
     end

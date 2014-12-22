@@ -1,3 +1,17 @@
+- content_for :header do
+  section
+    h2= t('.h2')
+    h3= t('.h3')
+  - if !current_user
+    section.login
+      = link_to t('devise.shared.links.sign_in_with_provider', provider: 'Facebook'), user_omniauth_authorize_path(:facebook), class: 'button'
+      h4= t('.h4')
+- content_for :post_header do
+  ul
+    - ['safe', 'trust', 'free', 'digital'].each do |icon|
+      li
+        = image_tag "home_header_icons_#{icon}.png"
+        p= t(".icons.#{icon}")
 - if @transactions.exists?
   section.transactions
     h3= t('.transactions')

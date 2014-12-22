@@ -2,13 +2,13 @@
 - content_for :title do
   == @user.name
 - content_for :meta_tags do
-  meta name="description" content="#{@user.status_label(@transactions.exists?)} #{@user.balance} #{@user.balance_label}."
+  meta name="description" content="#{@user.status_label(@transactions.exists?)[0..-2]} #{@user.balance} #{@user.balance_label}."
   meta name="keywords" content="#{@user.name} Sistêmico"
   meta property="og:title" content="#{@user.name} · Sistêmico"
   meta property="og:type" content="website"
   meta property="og:url" content=user_by_permalink_url(@user)
   meta property="og:image" content=(@user.image.present? ? "#{@user.image}?height=256&width=256" : "#{request.protocol}#{request.host_with_port}#{image_path("logo_facebook.png")}")
-  meta property="og:description" content="#{@user.status_label(@transactions.exists?)} #{@user.balance} #{@user.balance_label}."
+  meta property="og:description" content="#{@user.status_label(@transactions.exists?)[0..-2]} #{@user.balance} #{@user.balance_label}."
   meta name="author" content=@user.name
 - content_for :header do
   section.user_profile

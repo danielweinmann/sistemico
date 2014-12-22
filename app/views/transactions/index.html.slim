@@ -1,3 +1,4 @@
+- suppress_headline_and_article!
 - content_for :title do
   = t('.title')
 - content_for :meta_tags do
@@ -23,7 +24,8 @@
       li
         = image_tag "home_header_icons_#{icon}.png"
         p= t(".icons.#{icon}")
-- if @transactions.exists?
-  section.transactions
-    h3= t('.transactions')
-    = render @transactions
+article
+  - if @transactions.exists?
+    section.transactions
+      h3= t('.transactions')
+      = render @transactions

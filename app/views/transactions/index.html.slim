@@ -1,3 +1,14 @@
+- content_for :title do
+  = t('.title')
+- content_for :meta_tags do
+  meta name="description" content="#{t('.h2')} #{t('.h3')} #{t('.h4')}"
+  meta name="keywords" content="#{t('.h2')} #{t('.h3')} #{t('.h4')}"
+  meta property="og:title" content="#{t('.title')} · Sistêmico"
+  meta property="og:type" content="website"
+  meta property="og:url" content=request.url
+  meta property="og:image" content="#{request.protocol}#{request.host_with_port}#{image_path("logo_facebook.png")}"
+  meta property="og:description" content="#{t('.h2')} #{t('.h3')} #{t('.h4')}"
+  meta name="author" content="Oswaldo Oliveira"
 - content_for :header do
   section
     h2= t('.h2')

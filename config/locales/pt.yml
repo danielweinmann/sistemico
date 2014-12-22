@@ -23,7 +23,7 @@ pt:
     es-MX: 'Español Mexicano'
     es-CO: 'Español Colombiano'
     pt-BR: 'Português Brasileiro'
-    pt-PT: 'Português de Portugal' 
+    pt-PT: 'Português de Portugal'
   activerecord:
     state_machines:
       transaction:
@@ -70,10 +70,11 @@ pt:
     confirmed: 'realizada'
     pending: 'pendente'
     index:
+      title: "Uma não-moeda abundante e aberta"
       transactions: "Últimas transações"
       h2: "Sistêmico é uma não-moeda abundante e aberta."
       h3: "É baseado em uma fonte inesgotável de valor: você."
-      h4: "Comece agora a enviar e receber Sistêmicos."
+      h4: "Comece agora a enviar e receber sistêmicos."
       icons:
         safe: "Seguro e transparente"
         trust: "Baseado na confiança"

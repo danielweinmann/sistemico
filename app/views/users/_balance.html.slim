@@ -1,0 +1,5 @@
+h1
+  = @user.status_label(@transactions.exists?)
+h2
+  span.number= @user.balance
+  = " #{@user.balance_label}"

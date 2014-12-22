@@ -17,8 +17,13 @@ article.transaction
   .created_at= "#{time_ago_in_words(transaction.created_at)} #{t('transactions.time_ago')}"
   / TODO confirm if pending trasactions will be listed here 
   / .status= transaction.human_state_name
+  / TODO is it possible to put .buttons only if at leats one button exist?
   - if defined?(show_events) && show_events
-    - if transaction.can_approve? && policy(transaction).approve?
-      = link_to t('activerecord.state_machines.transaction.state.events.approve'), approve_transaction_path(transaction), method: :put, class: 'button'
-    - if transaction.can_reject? && policy(transaction).reject?
-      = link_to t('activerecord.state_machines.transaction.state.events.reject'), reject_transaction_path(transaction), method: :put, class: 'button reject'
+    .buttons
+      // TODO accidentally I clicked in accept/reject buttons while styling
+      // them - maybe a alert/js confirmation before send the put request?
+      - if transaction.can_approve? && policy(transaction).approve?
+        = link_to t('activerecord.state_machines.transaction.state.events.approve'), approve_transaction_path(transaction), method: :put, class: 'button accept'
+      - if transaction.can_reject? && policy(transaction).reject?
+        = link_to t('activerecord.state_machines.transaction.state.events.reject'), reject_transaction_path(transaction), method: :put, class: 'button reject'
+      p= t('users.show.transactions.warning')

@@ -90,9 +90,4 @@ pt:
       status_unbalenced_positive: "%{user} está acumulando."
       status_unbalenced_negative: "%{user} está devendo."
       transactions:
-        singular: 'Transação'
-        plural: 'Transações'
-        confirmed: 'realizada'
-        pending: 'pendente'
         warning: 'Transações aceitas não podem ser desfeitas. São contabilizadas e publicadas.'
-      pending: "Envios e recebimentos pendentes"

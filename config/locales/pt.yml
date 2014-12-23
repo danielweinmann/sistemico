@@ -83,7 +83,7 @@ pt:
         safe: "Seguro e transparente"
         trust: "Baseado na confiança"
         free: "Gratuito e inclusivo"
-        digital: "100% digital"
+        digital: "Totalmente digital"
   users:
     send: "Enviar sistêmicos para %{user}"
     show:

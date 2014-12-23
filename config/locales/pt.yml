@@ -75,6 +75,7 @@ pt:
     index:
       title: "Uma não-moeda abundante e aberta"
       transactions: "Últimas transações"
+      users: "Pessoas"
       h2: "Sistêmico é uma não-moeda abundante e aberta."
       h3: "É baseado em uma fonte inesgotável de valor: você."
       h4: "Comece agora a enviar e receber sistêmicos."

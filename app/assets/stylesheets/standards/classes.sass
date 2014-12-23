@@ -56,15 +56,17 @@
   color: $header_text_color 
   font: normal $normal_weight .9em $standard_font
   text-align: center
+.number
+  display: block
+  font: normal $bold_weight 6em $standard_font
+  letter-spacing: normal
+  line-height: 1
 .transactions, .users
   background-color: $container_color
   padding: 0 0 3em 0
   text-align: center
   h2
     +label_text
-    .number
-      display: block
-      font: normal $normal_weight 4em $standard_font
   h3, article
     margin: 0 0 3em 0
   h3
@@ -114,11 +116,6 @@
       clear: both
       +label_text
       white-space: nowrap
-      span.number
-        display: block
-        font-size: 3.5em
-        letter-spacing: normal
-        line-height: 1
     .to_user
       background: transparent image-url('speech_bubble_arrow_mobile.svg') no-repeat bottom center / contain
       padding: 2em 0
@@ -152,10 +149,10 @@
       .value
         margin-left: 35%
         position: absolute
-        top: 3.8em
+        top: 1.8em
         width: 30%
         span
-          margin-bottom: .5em
+          margin-bottom: .2em
       .to_user
         background-image: image-url('speech_bubble_arrow_desktop.svg')
         padding: 0

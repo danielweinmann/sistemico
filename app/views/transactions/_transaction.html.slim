@@ -8,7 +8,7 @@ article.transaction
     .to= link_to transaction.to_user.display_image, user_by_permalink_path(transaction.to_user)
   .value
     span.number= "#{transaction.value} "
-    |sistêmicos
+    = t('activerecord.attributes.user.balance').pluralize(transaction.value)
   .to_user
     h5
       span= "#{t('to')} "

@@ -87,7 +87,7 @@ pt:
       no_positive_balance_needed: 'Você não precisa ter saldo positivo.'
       status_balanced: "%{user} está em equilíbrio."
       status_inactive: "%{user} ainda não fez nenhuma transação."
-      status_unbalenced_positive: "%{user} está acumulando."
-      status_unbalenced_negative: "%{user} está devendo."
+      status_unbalanced_positive: "%{user} está acumulando."
+      status_unbalanced_negative: "%{user} está devendo."
       transactions:
         warning: 'Transações aceitas não podem ser desfeitas. São contabilizadas e publicadas.'

@@ -1,5 +1,3 @@
-// TODO: check if user classes defined here (.status, .user_profile) are used
-// elsewhere (and maybe move them to classes.sass)
 body[data-action="show"][data-controller="users"][data-namespace="null"]
   #header_wrapper
     header
@@ -44,9 +42,7 @@ body[data-action="show"][data-controller="users"][data-namespace="null"]
         h1
           margin-bottom: 1em
         h2
-          font-size: 1em
-          letter-spacing: .2em
-          text-transform: uppercase
+          +label_text
           .number
             display: block
             font: normal $normal_weight 4em $standard_font
@@ -69,10 +65,7 @@ body[data-action="show"][data-controller="users"][data-namespace="null"]
           margin: 1em auto 0 auto
           width: 90%
         .tip
-          color: $header_text_color 
-          font: normal $normal_weight .9em $standard_font
           margin: 0 0 2.5em 0
-          text-align: center
     +media($desktop)
       #content
         max-width: 100%

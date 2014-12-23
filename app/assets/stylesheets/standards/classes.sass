@@ -79,9 +79,16 @@
     .image
       width: 100%
       img
-        width: 100%
-        border: 5px solid $box_color
+        border: 3px solid $box_color
         border-radius: 50%
+        width: 100%
+      a
+        color: $text_color
+        font-weight: $bold_weight
+        text-decoration: none
+    &:hover
+      a
+        color: $link_color
 .transactions
   .transaction
     margin: 1em 0 3em 0

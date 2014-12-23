@@ -1,2 +1,4 @@
 article.user
-  .image= link_to user.display_image, user_by_permalink_path(user)
+  .image
+    = link_to user.display_image, user_by_permalink_path(user)
+    span= link_to user.name, user_by_permalink_path(user)

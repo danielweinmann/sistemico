@@ -17,7 +17,7 @@ article.transaction
   .created_at= "#{time_ago_in_words(transaction.created_at)} #{t('transactions.time_ago')}"
   / TODO confirm if pending trasactions will be listed here 
   / .status= transaction.human_state_name
-  / TODO is it possible to put .buttons only if at leats one button exist?
+  / TODO is it possible to output div.buttons only if at least one button exists?
   - if defined?(show_events) && show_events
     .buttons_group
       - if transaction.can_approve? && policy(transaction).approve?

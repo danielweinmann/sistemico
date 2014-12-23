@@ -4,14 +4,16 @@
 # And so on...
 pt:
   empty: 'Nenhum %{model} encontrado.'
+  from: 'De'
   to: 'Para'
   destroy: 'Excluir'
   add: 'Adicionar'
   confirm: 'Você está certo disso?'
+  cancel: 'Cancelar'
   logout: 'Sair'
   profile: 'Minhas transações'
   my_info: 'Meus dados'
-  transfer: 'Enviar sistêmicos'
+  transfer: 'Enviar'
   transfered: 'Enviou'
   help: 'Ajuda e contato'
   languages:
@@ -47,7 +49,7 @@ pt:
       transaction:
         from_user: De
         to_user: Para
-        value: Valor
+        value: "Valor em Sistêmicos"
         description: Descrição
   flash:
     actions:
@@ -69,6 +71,7 @@ pt:
     plural: 'Transações'
     confirmed: 'realizada'
     pending: 'pendente'
+    time_ago: 'atrás'
     index:
       title: "Uma não-moeda abundante e aberta"
       transactions: "Últimas transações"
@@ -80,7 +83,6 @@ pt:
         trust: "Baseado na confiança"
         free: "Gratuito e inclusivo"
         digital: "100% digital"
-    time_ago: 'atrás'
   users:
     send: "Enviar sistêmicos para %{user}"
     show:

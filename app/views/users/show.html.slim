@@ -23,23 +23,30 @@
   - else
     section.status.unbalanced= render 'balance'
 - if @user == current_user
-  - if @pending.try(:exists?)
-    article.pending_transactions
-      section.transactions.pending
-        h3= t('.pending')
+  article.pending_transactions
+    section.transactions.pending
+      h2
+        span.number= "#{@pending.count} "
+        - if @transactions.count == 1
+          = t('transactions.singular')
+        - else
+          = t('transactions.plural')
+        = " #{t('transactions.pending').pluralize(@pending.count)}"
+      - if @pending.exists?
         = render partial: 'transactions/transaction', collection: @pending, locals: { show_events: true }
 - else
   article.send
     = link_to t('users.send', user: @user.name), new_user_transaction_path(@user.id), class: "button"
     p.tip= t('users.show.no_positive_balance_needed')
-- if @transactions.exists?
-  article.confirmed_transactions
-    section.transactions
-      h2
-        span.number= "#{@transactions.count} "
-        - if @transactions.count == 1
-          = t('transactions.singular')
-        - else
-          = t('transactions.plural')
-        = " #{t('transactions.confirmed').pluralize(@transactions.count)}"
+
+article.confirmed_transactions
+  section.transactions
+    h2
+      span.number= "#{@transactions.count} "
+      - if @transactions.count == 1
+        = t('transactions.singular')
+      - else
+        = t('transactions.plural')
+      = " #{t('transactions.confirmed').pluralize(@transactions.count)}"
+    - if @transactions.exists?
       = render @transactions

@@ -1,5 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="1100px" height="36px" viewBox="-390 0 1100 36" enable-background="new -390 0 1100 36" xml:space="preserve">
-  <polygon fill="#ffffff" points="300.258,13.475 290.46,0.067 286.442,3.004 294.095,13.476 33.284,13.51 23.46,0.067 19.442,3.004 27.121,13.511 -115,13.514 -115,23.514 26.374,23.512 19.442,32.997 23.46,35.933 32.538,23.511 293.4,23.476 286.442,32.997 290.46,35.933 299.564,23.475 434.938,23.474 435.061,13.474 "/>
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="1100px" height="36px" viewBox="0 0 1100 36" enable-background="new 0 0 1100 36" xml:space="preserve">
+  <g>
+	<rect x="478.374" y="13.474" fill="#ffffff" width="5.812" height="10"/>
+	<rect x="489.997" y="13.474" fill="#ffffff" width="5.812" height="10"/>
+	<rect x="466.75" y="13.474" fill="#ffffff" width="5.812" height="10"/>
+	<rect x="431.881" y="13.474" fill="#ffffff" width="5.812" height="10"/>
+	<rect x="443.504" y="13.474" fill="#ffffff" width="5.812" height="10"/>
+	<rect x="455.127" y="13.474" fill="#ffffff" width="5.812" height="10"/>
+	<rect x="524.866" y="13.474" fill="#ffffff" width="5.812" height="10"/>
+	<rect x="501.62" y="13.474" fill="#ffffff" width="5.812" height="10"/>
+	<rect x="536.489" y="13.474" fill="#ffffff" width="5.812" height="10"/>
+	<rect x="513.243" y="13.474" fill="#ffffff" width="5.812" height="10"/>
+	<rect x="699.211" y="13.474" fill="#ffffff" width="5.812" height="10"/>
+	<rect x="734.08" y="13.474" fill="#ffffff" width="5.812" height="10"/>
+	<rect x="722.457" y="13.474" fill="#ffffff" width="5.812" height="10"/>
+	<rect x="548.112" y="13.474" fill="#ffffff" width="5.812" height="10"/>
+	<rect x="710.834" y="13.474" fill="#ffffff" width="5.812" height="10"/>
+	<rect x="745.703" y="13.474" fill="#ffffff" width="5.812" height="10"/>
+	<rect x="803.818" y="13.474" fill="#ffffff" width="5.812" height="10"/>
+	<rect x="815.441" y="13.474" fill="#ffffff" width="5.812" height="10"/>
+	<rect x="792.195" y="13.474" fill="#ffffff" width="5.812" height="10"/>
+	<rect x="757.326" y="13.474" fill="#ffffff" width="5.812" height="10"/>
+	<rect x="780.572" y="13.474" fill="#ffffff" width="5.812" height="10"/>
+	<rect x="768.949" y="13.474" fill="#ffffff" width="5.812" height="10"/>
+	<rect x="617.85" y="13.474" fill="#ffffff" width="5.812" height="10"/>
+	<rect x="338.897" y="13.474" fill="#ffffff" width="5.812" height="10"/>
+	<rect x="362.143" y="13.474" fill="#ffffff" width="5.812" height="10"/>
+	<rect x="304.028" y="13.474" fill="#ffffff" width="5.812" height="10"/>
+	<rect x="559.734" y="13.474" fill="#ffffff" width="5.812" height="10"/>
+	<rect x="327.274" y="13.474" fill="#ffffff" width="5.812" height="10"/>
+	<rect x="350.52" y="13.474" fill="#ffffff" width="5.812" height="10"/>
+	<rect x="373.766" y="13.474" fill="#ffffff" width="5.812" height="10"/>
+	<polygon fill="#ffffff" points="426.07,13.474 423.254,13.474 413.43,0.067 409.412,3.004 417.091,13.474 408.635,13.474 408.635,23.475 416.344,23.475 409.412,32.997 413.43,35.934 422.508,23.475 426.07,23.475 	"/>
+	<polygon fill="#ffffff" points="693.4,13.474 690.229,13.474 680.43,0.067 676.412,3.004 684.065,13.474 675.965,13.474 675.965,23.475 683.37,23.475 676.412,32.997 680.43,35.934 689.534,23.475 693.4,23.475 	"/>
+	<rect x="385.389" y="13.474" fill="#ffffff" width="5.812" height="10"/>
+	<rect x="397.012" y="13.474" fill="#ffffff" width="5.812" height="10"/>
+	<rect x="315.651" y="13.474" fill="#ffffff" width="5.812" height="10"/>
+	<rect x="629.473" y="13.474" fill="#ffffff" width="5.812" height="10"/>
+	<rect x="606.227" y="13.474" fill="#ffffff" width="5.812" height="10"/>
+	<rect x="594.604" y="13.474" fill="#ffffff" width="5.812" height="10"/>
+	<rect x="582.98" y="13.474" fill="#ffffff" width="5.812" height="10"/>
+	<rect x="571.357" y="13.474" fill="#ffffff" width="5.812" height="10"/>
+	<rect x="652.719" y="13.474" fill="#ffffff" width="5.812" height="10"/>
+	<rect x="664.342" y="13.474" fill="#ffffff" width="5.812" height="10"/>
+	<rect x="292.405" y="13.474" fill="#ffffff" width="5.812" height="10"/>
+	<rect x="280.782" y="13.474" fill="#ffffff" width="5.812" height="10"/>
+	<rect x="641.096" y="13.474" fill="#ffffff" width="5.812" height="10"/>
+  </g>
 </svg>

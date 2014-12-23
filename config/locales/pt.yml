@@ -93,4 +93,4 @@ pt:
       status_unbalanced_positive: "%{user} está acumulando."
       status_unbalanced_negative: "%{user} está devendo."
       transactions:
-        warning: 'Transações aceitas não podem ser desfeitas. São contabilizadas e publicadas.'
+        warning: 'Transações aceitas não podem ser desfeitas.<br>São contabilizadas e publicadas.'

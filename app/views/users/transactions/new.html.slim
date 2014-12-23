@@ -30,4 +30,4 @@ article
     fieldset.buttons_group
       = form.submit t('transfer')
       = link_to t('cancel'), user_by_permalink_path(@user), class:'button reject'
-      p.tip= t('users.show.transactions.warning')
+      p.tip== t('users.show.transactions.warning')

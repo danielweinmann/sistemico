@@ -24,4 +24,4 @@ article.transaction
         = link_to t('activerecord.state_machines.transaction.state.events.approve'), approve_transaction_path(transaction), method: :put, data: { confirm: t('confirm') }, class: 'button accept'
       - if transaction.can_reject? && policy(transaction).reject?
         = link_to t('activerecord.state_machines.transaction.state.events.reject'), reject_transaction_path(transaction), method: :put, data: { confirm: t('confirm') }, class: 'button reject'
-      p.tip= t('users.show.transactions.warning')
+      p.tip== t('users.show.transactions.warning')

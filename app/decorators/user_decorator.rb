@@ -17,6 +17,11 @@ module UserDecorator
     end
   end
 
+  def balance_with_sign
+   return self.balance unless self.balance > 0
+   "+#{self.balance}"
+  end
+
   def status_label(transactions)
     if self.balance == 0 && transactions
       t('users.show.status_balanced', user: self.name)

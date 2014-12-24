@@ -8,7 +8,7 @@ class UsersController < ApplicationController
   after_action :verify_policy_scoped, only: %i[index]
 
   def index
-    @users = policy_scope(User).order("updated_at DESC")
+    @users = policy_scope(User).order(:name)
     respond_with @users    
   end
 

@@ -39,7 +39,7 @@
   font: normal $normal_weight 1em $standard_font
   letter-spacing: .2em
   text-transform: uppercase
-.button, a.button
+.button, a.button, input[type=submit]
   +sistemico_button
   &.reject
     background-color: $cancel_color
@@ -92,6 +92,8 @@
       a
         color: $link_color
 .transactions
+  h2
+    padding: 3em 0
   .transaction
     margin: 1em 0 3em 0
     background-color: $box_color
@@ -102,6 +104,8 @@
         text-decoration: none
         &:hover
           color: $link_color
+      h5
+        font-size: 1em
       span
         display: block
         font-weight: $normal_weight
@@ -136,7 +140,6 @@
       border-radius: 1em
       position: relative
       .from_user, .to_user
-        font-size: 1.2em
         span
           display: inline 
       .from_user

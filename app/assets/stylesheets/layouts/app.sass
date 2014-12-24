@@ -6,7 +6,7 @@
   z-index: 400
   div
     +label_text
-    color: $flash_text_color
+    cor: $flash_text_color
     font-size: 0.8em
     line-height: 1.2em
     margin: 0
@@ -33,7 +33,7 @@
         img
           height: .5em
           +media($desktop)
-            height: auto
+            height: .7em
     .sign_in, .user
       color: $header_text_color
       display: none
@@ -99,7 +99,7 @@
       h4
         font: normal $normal_weight .9em/1 $headline_font
       &.login
-        margin-top: 3.3em
+        margin-top: 3.2em
     +media($desktop)
       section
         padding-top: 7.2em
@@ -111,12 +111,10 @@
         h4
           font-size: .9em
           margin-top: 2.5em
-        &.login
-          margin-top: 6.3em
 #post_header_wrapper
   header
-    margin-bottom: 1.7em
-    margin-top: 2.6em
+    margin-bottom: 3.2em
+    margin-top: 3.2em
     ul
       list-style: none
       margin: 0
@@ -156,32 +154,17 @@
       text-decoration: none
     h4
       margin-bottom: 1em
-      a
-        color: $footer_text_color
-        text-decoration: none
-        font-size: 2em
-        line-height: 1.2em
       img
-        height: .8em
+        height: 1em
     h5
       color: $footer_text_color
       font-weight: normal
       width: 90%
       margin-left: 5%
-      +media($desktop)
-        width: auto
-        margin-left: 0
     .user
       +span-columns(6)
-      +media($desktop)
-        display: none
     .links
       margin-bottom: 2em
-      +media($desktop)
-        +span-columns(6)
-        +shift(3)
-        margin-bottom: 4em
-      h5
     .credits
       +span-columns(6)
       a
@@ -196,3 +179,17 @@
         margin-right: 0.5em
         &:last-child
           margin: 0
+  +media($desktop)
+    footer
+      h5
+        width: auto
+        margin-left: 0
+        a.button
+          padding: 1.382em
+      .user
+        display: none
+      .links
+        +media($desktop)
+          +span-columns(6)
+          +shift(3)
+          margin-bottom: 4em

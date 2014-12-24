@@ -87,6 +87,7 @@
       a
         color: $text_color
         font-weight: $bold_weight
+        line-height: 1
         text-decoration: none
     &:hover
       a
@@ -234,7 +235,7 @@
   +media($desktop)
     a, input[type=submit]
       font-size: 1em
-      margin-right: 20%
+      margin: 0 20% 0 0
       width: 20%
-      &:last-child
-        margin-right: 20%
+      &:first-child
+        margin: 0 20% 0 0

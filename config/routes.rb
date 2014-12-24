@@ -8,7 +8,7 @@ Rails.application.routes.draw do
 
   filter :locale, exclude: /^\/users\/auth\/facebook/
   
-  resources :transactions, only: [] do
+  resources :transactions, only: [:index] do
     member do
       put :approve
       put :reject
@@ -20,7 +20,7 @@ Rails.application.routes.draw do
   end
   
   get '/sitemap' => "transactions#sitemap", :as => :sitemap
-  root "transactions#index"
+  root "transactions#home"
   get "/:id" => "users#show", as: :user_by_permalink
 
 end

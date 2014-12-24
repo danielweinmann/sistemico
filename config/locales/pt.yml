@@ -39,7 +39,7 @@ pt:
             approve: Aceitar
             reject: Recusar
     models:
-      transaction: Envio
+      transaction: Transação
       user: Pessoa
     attributes:
       user:
@@ -73,7 +73,7 @@ pt:
     confirmed: 'realizada'
     pending: 'pendente'
     time_ago: 'atrás'
-    index:
+    home:
       title: "Uma não-moeda abundante e aberta"
       transactions: "Últimas transações"
       users: "Pessoas"

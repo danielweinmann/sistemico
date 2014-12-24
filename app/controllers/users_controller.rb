@@ -4,8 +4,13 @@ class UsersController < ApplicationController
 
   respond_to :html
 
-  after_action :verify_authorized, except: %i[]
-  after_action :verify_policy_scoped, only: %i[]
+  after_action :verify_authorized, except: %i[index]
+  after_action :verify_policy_scoped, only: %i[index]
+
+  def index
+    @users = policy_scope(User).order("updated_at DESC")
+    respond_with @users    
+  end
 
   def show
     authorize @user

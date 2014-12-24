@@ -31,6 +31,9 @@ article
       = render @transactions
   - if @users.exists?
     section.users
-      h3= t('.users')
+      h3
+        = t('.users')
+        = " · "
+        = link_to t('view_more'), users_path
       div
         = render @users

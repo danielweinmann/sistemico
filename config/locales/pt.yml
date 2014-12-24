@@ -16,6 +16,7 @@ pt:
   transfer: 'Enviar'
   transfered: 'Enviou'
   help: 'Ajuda e contato'
+  view_more: 'Ver mais'
   languages:
     pt: 'Português'
     es: 'Español'
@@ -39,7 +40,7 @@ pt:
             reject: Recusar
     models:
       transaction: Envio
-      user: Usuário
+      user: Pessoa
     attributes:
       user:
         name: Nome

@@ -29,3 +29,8 @@ article
     section.transactions
       h3= t('.transactions')
       = render @transactions
+  - if @users.exists?
+    section.users
+      h3= t('.users')
+      div
+        = render @users

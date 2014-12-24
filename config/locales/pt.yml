@@ -4,14 +4,16 @@
 # And so on...
 pt:
   empty: 'Nenhum %{model} encontrado.'
+  from: 'De'
   to: 'Para'
   destroy: 'Excluir'
   add: 'Adicionar'
   confirm: 'Você está certo disso?'
+  cancel: 'Cancelar'
   logout: 'Sair'
   profile: 'Minhas transações'
   my_info: 'Meus dados'
-  transfer: 'Enviar sistêmicos'
+  transfer: 'Enviar'
   transfered: 'Enviou'
   help: 'Ajuda e contato'
   languages:
@@ -47,7 +49,7 @@ pt:
       transaction:
         from_user: De
         to_user: Para
-        value: Valor
+        value: "Valor em Sistêmicos"
         description: Descrição
   flash:
     actions:
@@ -69,9 +71,11 @@ pt:
     plural: 'Transações'
     confirmed: 'realizada'
     pending: 'pendente'
+    time_ago: 'atrás'
     index:
       title: "Uma não-moeda abundante e aberta"
       transactions: "Últimas transações"
+      users: "Pessoas"
       h2: "Sistêmico é uma não-moeda abundante e aberta."
       h3: "É baseado em uma fonte inesgotável de valor: você."
       h4: "Comece agora a enviar e receber sistêmicos."
@@ -79,20 +83,14 @@ pt:
         safe: "Seguro e transparente"
         trust: "Baseado na confiança"
         free: "Gratuito e inclusivo"
-        digital: "100% digital"
-    time_ago: 'atrás'
+        digital: "Totalmente digital"
   users:
     send: "Enviar sistêmicos para %{user}"
     show:
       no_positive_balance_needed: 'Você não precisa ter saldo positivo.'
       status_balanced: "%{user} está em equilíbrio."
       status_inactive: "%{user} ainda não fez nenhuma transação."
-      status_unbalenced_positive: "%{user} está acumulando."
-      status_unbalenced_negative: "%{user} está devendo."
+      status_unbalanced_positive: "%{user} está acumulando."
+      status_unbalanced_negative: "%{user} está devendo."
       transactions:
-        singular: 'Transação'
-        plural: 'Transações'
-        confirmed: 'realizada'
-        pending: 'pendente'
-        warning: 'Transações aceitas não podem ser desfeitas. São contabilizadas e publicadas.'
-      pending: "Envios e recebimentos pendentes"
+        warning: 'Transações aceitas não podem ser desfeitas.<br>São contabilizadas e publicadas.'

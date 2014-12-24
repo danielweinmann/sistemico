@@ -95,8 +95,10 @@
   h2
     padding: 3em 0
   .transaction
-    margin: 1em 0 3em 0
+    margin: 1em auto 3em auto
     background-color: $box_color
+    border-radius: 1em
+    width: 94%
     .from_user, .to_user
       a
         color: $text_color 
@@ -137,7 +139,6 @@
     +outer-container
     .transaction
       width: auto
-      border-radius: 1em
       position: relative
       .from_user, .to_user
         span
@@ -219,10 +220,10 @@
     display: block
     float: right
     font-size: .8em
-    margin: 0 5% 0 0
-    width: 60%
-    &:last-child
-      margin: 0 10% 0 0
+    margin: 0 10% 0 0
+    width: 40%
+    &:first-child
+      margin: 0 5% 0 0
   p
     clear: both
     color: $user_inactive_color

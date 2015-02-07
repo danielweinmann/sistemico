@@ -3,12 +3,12 @@ article.transaction
     h5
       = link_to transaction.from_user.name, user_by_permalink_path(transaction.from_user)
       span= " #{t('transfered')}"
-  .images
+  .transaction_images
     .from= link_to transaction.from_user.display_image, user_by_permalink_path(transaction.from_user)
     .to= link_to transaction.to_user.display_image, user_by_permalink_path(transaction.to_user)
   .value
     span.number= "#{transaction.value} "
-    |sistêmicos
+    = t('activerecord.attributes.user.balance').pluralize(transaction.value)
   .to_user
     h5
       span= "#{t('to')} "
@@ -17,11 +17,11 @@ article.transaction
   .created_at= "#{time_ago_in_words(transaction.created_at)} #{t('transactions.time_ago')}"
   / TODO confirm if pending trasactions will be listed here 
   / .status= transaction.human_state_name
-  / TODO is it possible to put .buttons only if at leats one button exist?
+  / TODO is it possible to output div.buttons only if at least one button exists?
   - if defined?(show_events) && show_events
-    .buttons
+    .buttons_group
       - if transaction.can_approve? && policy(transaction).approve?
         = link_to t('activerecord.state_machines.transaction.state.events.approve'), approve_transaction_path(transaction), method: :put, data: { confirm: t('confirm') }, class: 'button accept'
       - if transaction.can_reject? && policy(transaction).reject?
         = link_to t('activerecord.state_machines.transaction.state.events.reject'), reject_transaction_path(transaction), method: :put, data: { confirm: t('confirm') }, class: 'button reject'
-      p= t('users.show.transactions.warning')
+      p.tip== t('users.show.transactions.warning')

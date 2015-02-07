@@ -1,5 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="320px" height="36px" viewBox="0 0 320 36" enable-background="new 0 0 320 36" xml:space="preserve">
-  <polygon fill="#ffffff" points="206.435,13.239 196.6,0.011 192.582,2.832 200.271,13.239 129.434,13.239 119.6,0.011 115.582,2.832 123.271,13.239 0,13.239 0,23.239 122.504,23.239 115.582,32.939 119.6,35.761 128.667,23.239 199.504,23.239 192.582,32.939 196.6,35.761 205.668,23.239 320,23.239 320,13.239 "/>
+  <g>
+	<rect x="288.51" y="13.239" fill="#ffffff" width="5.812" height="10"/>
+	<rect x="300.133" y="13.239" fill="#ffffff" width="5.812" height="10"/>
+	<rect x="311.756" y="13.239" fill="#ffffff" width="5.812" height="10"/>
+	<rect x="172.28" y="13.239" fill="#ffffff" width="5.812" height="10"/>
+	<rect x="137.411" y="13.239" fill="#ffffff" width="5.812" height="10"/>
+	<rect x="149.034" y="13.239" fill="#ffffff" width="5.812" height="10"/>
+	<rect x="276.887" y="13.239" fill="#ffffff" width="5.812" height="10"/>
+	<rect x="218.772" y="13.239" fill="#ffffff" width="5.812" height="10"/>
+	<rect x="265.264" y="13.239" fill="#ffffff" width="5.812" height="10"/>
+	<rect x="230.396" y="13.239" fill="#ffffff" width="5.812" height="10"/>
+	<rect x="253.641" y="13.239" fill="#ffffff" width="5.812" height="10"/>
+	<rect x="242.019" y="13.239" fill="#ffffff" width="5.812" height="10"/>
+	<rect x="160.657" y="13.239" fill="#ffffff" width="5.812" height="10"/>
+	<rect x="79.296" y="13.239" fill="#ffffff" width="5.812" height="10"/>
+	<rect x="90.919" y="13.239" fill="#ffffff" width="5.812" height="10"/>
+	<rect y="13.239" fill="#ffffff" width="3.747" height="10"/>
+	<rect x="102.542" y="13.239" fill="#ffffff" width="5.812" height="10"/>
+	<polygon fill="#ffffff" points="212.961,13.239 206.436,13.239 196.6,0.011 192.582,2.832 200.271,13.239 195.526,13.239 195.526,23.239 199.504,23.239 192.582,32.939 196.6,35.761 205.668,23.239 212.961,23.239 	"/>
+	<polygon fill="#ffffff" points="131.6,13.239 129.434,13.239 119.6,0.011 115.582,2.832 123.271,13.239 114.165,13.239 114.165,23.239 122.504,23.239 115.582,32.939 119.6,35.761 128.667,23.239 131.6,23.239 	"/>
+	<rect x="56.05" y="13.239" fill="#ffffff" width="5.812" height="10"/>
+	<rect x="9.558" y="13.239" fill="#ffffff" width="5.812" height="10"/>
+	<rect x="21.181" y="13.239" fill="#ffffff" width="5.812" height="10"/>
+	<rect x="32.804" y="13.239" fill="#ffffff" width="5.812" height="10"/>
+	<rect x="67.673" y="13.239" fill="#ffffff" width="5.812" height="10"/>
+	<rect x="183.903" y="13.239" fill="#ffffff" width="5.812" height="10"/>
+	<rect x="44.427" y="13.239" fill="#ffffff" width="5.812" height="10"/>
+  </g>
 </svg>

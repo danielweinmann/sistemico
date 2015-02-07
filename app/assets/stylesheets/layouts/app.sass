@@ -5,14 +5,13 @@
   width: 100%
   z-index: 400
   div
+    +label_text
     color: $flash_text_color
     font-size: 0.8em
     line-height: 1.2em
-    letter-spacing: .2em
     margin: 0
     padding: 1em
     text-align: center
-    text-transform: uppercase
     +media($desktop)
       font-size: 1em
   .notice, .success
@@ -34,7 +33,7 @@
         img
           height: .5em
           +media($desktop)
-            height: auto
+            height: .7em
     .sign_in, .user
       color: $header_text_color
       display: none
@@ -96,11 +95,11 @@
         font: normal $normal_weight 1.5em/1.1 $headline_font
         margin-bottom: 1.2em
       h3
-        font: normal $normal_weight 1em/1.3 $headline_font
+        font: normal $normal_weight 1em/1.3 $standard_font
       h4
-        font: normal $normal_weight .9em $headline_font
+        font: normal $normal_weight .9em/1 $headline_font
       &.login
-        margin-top: 3.3em
+        margin-top: 3.2em
     +media($desktop)
       section
         padding-top: 7.2em
@@ -112,25 +111,21 @@
         h4
           font-size: .9em
           margin-top: 2.5em
-        &.login
-          margin-top: 6.3em
 #post_header_wrapper
   header
-    margin-top: 2.6em
+    margin-bottom: 3.2em
+    margin-top: 3.2em
     ul
       list-style: none
       margin: 0
       padding: 0
       +outer-container
       li
-        color: $header_icon_label_color
+        +label_text
         display: block
         float: left
-        font: normal $normal_weight .8em $standard_font
-        letter-spacing: .2em
         margin: 0 0 1.6em 10%
         text-align: center
-        text-transform: uppercase
         width: 35%
         img
           width: 100%
@@ -159,34 +154,17 @@
       text-decoration: none
     h4
       margin-bottom: 1em
-      a
-        color: $footer_text_color
-        text-decoration: none
-        font-size: 2em
-        line-height: 1.2em
-        &:hover
-          opacity: 0.8
       img
-        height: .8em
+        height: 1em
     h5
       color: $footer_text_color
       font-weight: normal
       width: 90%
       margin-left: 5%
-      +media($desktop)
-        width: auto
-        margin-left: 0
     .user
       +span-columns(6)
-      +media($desktop)
-        display: none
     .links
       margin-bottom: 2em
-      +media($desktop)
-        +span-columns(6)
-        +shift(3)
-        margin-bottom: 4em
-      h5
     .credits
       +span-columns(6)
       a
@@ -201,3 +179,17 @@
         margin-right: 0.5em
         &:last-child
           margin: 0
+  +media($desktop)
+    footer
+      h5
+        width: auto
+        margin-left: 0
+        a.button
+          padding: 1.382em
+      .user
+        display: none
+      .links
+        +media($desktop)
+          +span-columns(6)
+          +shift(3)
+          margin-bottom: 4em

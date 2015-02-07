@@ -5,8 +5,17 @@ class TransactionsController < StateController
   respond_to :html, except: [:sitemap]
   respond_to :xml, only: [:sitemap]
 
-  after_action :verify_authorized, except: %i[index sitemap]
-  after_action :verify_policy_scoped, only: %i[index sitemap]
+  after_action :verify_authorized, except: %i[home index sitemap]
+  after_action :verify_policy_scoped, only: %i[home index sitemap]
+
+  def home
+    @transactions = policy_scope(Transaction).with_state(:approved).order("updated_at DESC").limit(3)
+    @users = policy_scope(User).order("updated_at DESC").limit(12)
+    # This will instantiate UserDecorator for the users
+    @from_users = @transactions.map &:from_user
+    @to_users = @transactions.map &:to_user
+    respond_with @transactions
+  end
 
   def index
     @transactions = policy_scope(Transaction).with_state(:approved).order("updated_at DESC")

@@ -1,0 +1,4 @@
+pt-BR:
+  activerecord:
+    models:
+      user: Pessoa

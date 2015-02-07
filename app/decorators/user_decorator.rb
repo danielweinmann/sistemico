@@ -17,15 +17,20 @@ module UserDecorator
     end
   end
 
+  def balance_with_sign
+   return self.balance unless self.balance > 0
+   "+#{self.balance}"
+  end
+
   def status_label(transactions)
     if self.balance == 0 && transactions
       t('users.show.status_balanced', user: self.name)
     elsif self.balance == 0 && !transactions
       t('users.show.status_inactive', user: self.name)
     elsif self.balance < 0
-      t('users.show.status_unbalenced_negative', user: self.name)
+      t('users.show.status_unbalanced_negative', user: self.name)
     else
-      t('users.show.status_unbalenced_positive', user: self.name)
+      t('users.show.status_unbalanced_positive', user: self.name)
     end
   end
 

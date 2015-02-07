@@ -12,18 +12,18 @@
   text-align: center
   text-decoration: none
   text-transform: uppercase
-  width: golen-ratio(100%, 1)
-  +media($desktop)
-    display: inline 
-    margin: 0
-    width: auto
+  width: 100%
   &:hover
     background: $button_hover_color
     color: $button_text_color
 @mixin sistemico_button
   +sistemico_mobile_button
-  border-radius: 1em
-  padding: 2em
+  +media($desktop)
+    border-radius: 1em
+    display: inline 
+    margin: 0
+    padding: 2em
+    width: auto
 @mixin sistemico_warning
   background-color: tint($flash_failure_color, 80%)
   padding: 2em
@@ -33,14 +33,18 @@
   h3
     margin-bottom: 1em
   margin-bottom: 2em
-.button, a.button
-  +sistemico_mobile_button
-  +media($desktop)
-    +sistemico_button
-.reject
-  background: $careful_color
-  &:hover
-    background: $careful_hover_color
+  ul li
+    text-align: left
+@mixin label_text
+  font: normal $normal_weight 1em $standard_font
+  letter-spacing: .2em
+  text-transform: uppercase
+.button, a.button, input[type=submit]
+  +sistemico_button
+  &.reject
+    background-color: $cancel_color
+    &:hover
+      background-color: $cancel_hover_color
 .links
   +span-columns(6)
   text-align: center
@@ -48,27 +52,54 @@
   margin-bottom: 2em
 .warning
   +sistemico_warning
-.transactions
+.tip
+  color: $header_text_color 
+  font: normal $normal_weight 1em $standard_font
+  text-align: center
+.number
+  display: block
+  font: normal $bold_weight 6em $standard_font
+  letter-spacing: normal
+  line-height: 1
+.transactions, .users
   background-color: $container_color
   padding: 0 0 3em 0
   text-align: center
   h2
-    font: normal $normal_weight 1em $headline_font
-    letter-spacing: .2em
-    text-transform: uppercase
-    .number
-      display: block
-      font: normal $normal_weight 4em $standard_font
+    +label_text
   h3, article
     margin: 0 0 3em 0
   h3
-    font: normal $normal_weight .8em $standard_font
-    letter-spacing: .2em
+    +label_text
+    font-size: 1em
     padding-top: 2.5em
-    text-transform: uppercase
+.users
+  +outer-container
+  .user
+    +span-columns(1)
+    +omega(6n)
+    .image
+      width: 100%
+      img
+        border: 3px solid $box_color
+        border-radius: 50%
+        width: 100%
+      a
+        color: $text_color
+        font-weight: $bold_weight
+        line-height: 1
+        text-decoration: none
+    &:hover
+      a
+        color: $link_color
+.transactions
+  h2
+    padding: 3em 0
   .transaction
-    margin: 1em 0 3em 0
+    margin: 1em auto 3em auto
     background-color: $box_color
+    border-radius: 1em
+    width: 94%
     .from_user, .to_user
       a
         color: $text_color 
@@ -76,6 +107,8 @@
         text-decoration: none
         &:hover
           color: $link_color
+      h5
+        font-size: 1em
       span
         display: block
         font-weight: $normal_weight
@@ -84,35 +117,12 @@
       background: transparent image-url('transaction_conectors_mobile.svg') repeat-y center top / contain
       padding: 1em 0
       text-align: center
-    .images
+    .transaction_images
       background: transparent image-url('transaction_arrows_mobile.svg') no-repeat center center / contain
-      .from, .to
-        float: left
-        margin: 0
-        width: 33%
-        img
-          border: 5px solid $container_color
-          border-radius: 50%
-          width: 100%
-      .to
-        float: right
-      &:after
-        content: "."
-        display: block
-        clear: both
-        visibility: hidden
-        line-height: 0
-        height: 0
     .value
       clear: both
-      letter-spacing: .2em
-      text-transform: uppercase
+      +label_text
       white-space: nowrap
-      span.number
-        display: block
-        font-size: 3.5em
-        letter-spacing: normal
-        line-height: 1
     .to_user
       background: transparent image-url('speech_bubble_arrow_mobile.svg') no-repeat bottom center / contain
       padding: 2em 0
@@ -124,55 +134,30 @@
       text-align: left
     .created_at
       padding: .5em 0
-    .buttons
+    .buttons_group
       padding: 1em 0
-      a
-        display: block
-        float: right
-        font-size: .8em
-        margin: 0 5% 0 0
-        width: 40%
-        &:last-child
-          margin: 0 10% 0 0
-      a.reject
-        background-color: $medium_gray
-      p
-        clear: both
-        color: $user_inactive_color
-        font-size: .8em
-        line-height: 1.2
-        margin: 0 auto
-        padding: 1em 0
-        width: 90%
   +media($desktop)
     +outer-container
     .transaction
       width: auto
-      border-radius: 1em
       position: relative
       .from_user, .to_user
-        font-size: 1.2em
         span
           display: inline 
       .from_user
         background-image: image-url('transaction_conectors_desktop.svg')
         padding: .8em 0 0 0
-      .images
+      .transaction_images
         background-image: image-url('transaction_arrows_desktop.svg')
         transform: translateY(-0.8em)
         -webkit-transform: translateY(-0.8em)
-        .from, .to
-          margin: 0 15%
-          width: 20%
-          .to
-            float: right
       .value
         margin-left: 35%
         position: absolute
-        top: 3.8em
+        top: 1.8em
         width: 30%
         span
-          margin-bottom: .5em
+          margin-bottom: .2em
       .to_user
         background-image: image-url('speech_bubble_arrow_desktop.svg')
         padding: 0
@@ -186,22 +171,15 @@
         width: 60%
       .created_at
         padding: .5em 0
-      .buttons
-        a
-          font-size: 1em
-          margin-right: 20%
-          width: 20%
-          &:last-child
-            margin-right: 20%
-        p
-          width: 30%
 .transactions.pending
   background-color: $background-color
+  h2
+    margin-bottom: 3em
   .transaction
     background-color: $container-color
     .from_user
       background-image: image-url('pending_transaction_conectors_mobile.svg')
-    .images
+    .transaction_images
       background-image: image-url('pending_transaction_arrows_mobile.svg')
       .from, .to
         img
@@ -213,10 +191,51 @@
     +media($desktop)
       .from_user
         background-image: image-url('pending_transaction_conectors_desktop.svg')
-      .images
+      .transaction_images
         background-image: image-url('pending_transaction_arrows_desktop.svg')
       .to_user
         background-image: image-url('pending_speech_bubble_arrow_desktop.svg')
-
-
-
+.transaction_images
+  .from, .to
+    float: left
+    margin: 0
+    width: 33%
+    img
+      border: 5px solid $container_color
+      border-radius: 50%
+      width: 100%
+    +media($desktop)
+      margin: 0 15%
+      width: 20%
+  .to
+    float: right
+  &:after
+    content: "."
+    display: block
+    clear: both
+    visibility: hidden
+    line-height: 0
+    height: 0
+.buttons_group
+  a, input[type=submit]
+    display: block
+    float: right
+    font-size: .8em
+    margin: 0 10% 0 0
+    width: 40%
+    &:first-child
+      margin: 0 5% 0 0
+  p
+    clear: both
+    color: $user_inactive_color
+    line-height: 1.2
+    margin: 0 auto
+    padding: 2em 0
+    width: 90%
+  +media($desktop)
+    a, input[type=submit]
+      font-size: 1em
+      margin: 0 20% 0 0
+      width: 20%
+      &:first-child
+        margin: 0 20% 0 0

@@ -1,0 +1,42 @@
+- suppress_headline_and_article!
+- content_for :title do
+  = t('.title')
+- content_for :meta_tags do
+  meta name="description" content="#{t('.h2')} #{t('.h3')} #{t('.h4')}"
+  meta name="keywords" content="#{t('.h2')} #{t('.h3')} #{t('.h4')} Sistêmico"
+  meta property="og:title" content="#{t('.title')} · Sistêmico"
+  meta property="og:type" content="website"
+  meta property="og:url" content=request.url
+  meta property="og:image" content="#{request.protocol}#{request.host_with_port}#{image_path("logo_facebook.png")}"
+  meta property="og:description" content="#{t('.h2')} #{t('.h3')} #{t('.h4')}"
+  meta name="author" content="Oswaldo Oliveira"
+- content_for :header do
+  section
+    h2= t('.h2')
+    h3= t('.h3')
+  - if !current_user
+    section.login
+      = link_to t('devise.shared.links.sign_in_with_provider', provider: 'Facebook'), user_omniauth_authorize_path(:facebook), class: 'button'
+      h4= t('.h4')
+- content_for :post_header do
+  ul
+    - ['safe', 'trust', 'free', 'digital'].each do |icon|
+      li
+        = image_tag "home_header_icons_#{icon}.png"
+        p= t(".icons.#{icon}")
+article
+  - if @transactions.exists?
+    section.transactions
+      h3
+        = t('.transactions')
+        = " · "
+        = link_to t('view_more'), transactions_path
+      = render @transactions
+  - if @users.exists?
+    section.users
+      h3
+        = t('.users')
+        = " · "
+        = link_to t('view_more'), users_path
+      div
+        = render @users
